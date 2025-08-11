@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배송정보</title>
+</head>
+<body>
+  <!-- semantic tag ---------------------------------------->
+  <!-- 시각적 효과보다는 의미를 갖는 태그 ------------------>
+  <!-- 사람보다는 Device에 의미를 전달하는게 목적 ---------->
+  <!-- 여기서 Device는 creen Reader기, 검색엔진 등이 있음 -->
+  <h1>배송정보</h1>
+  <form action="orders.jsp">
+    <fieldset>
+    <!-- 모양을 박스형태 테두리로 보여줌 -->
+      <legend>배송 정보</legend>
+      <!-- 테두리 안 제목 -->
+       <ul id="shipping">
+        <li><label for="prod">주문상품</label>
+        <input type="text" id="prod" value="상품용 3KG" readonly></li>
+        <li><label for="user-name">이름</label>
+        <input type="text" id="user-name" autofocus required></li>
+        <!-- Autofocus는 깜빡거리게 표시, required는 반드시 입력을 하라고표시 -->
+        <li><label for="addr">배송 주소</label>
+        <input type="text" id="addr" required></li>
+        <li><label for="mail">이메일</label
+        ><input type="email" id="email"></li>
+        <li><label for="phone">연락처</label>
+        <input type="tel" id="phone" placeholder="번호만 입력해주세요" required></li>
+        <li><label for="d-day">배송 지정</label>
+        <input type="date" id="d-day"><small>(주문일로부터 최소 3일 이후)</small></li>
+        </ul>
+    </fieldset>
+    <div>
+      <input type="submit" value="주문하기">
+      <input type="reset" value="취소하기">
+    </div>
+  </form> 
+
+
+</body>
+</html>
