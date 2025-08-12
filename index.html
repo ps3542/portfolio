@@ -1,19 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>포트폴리오</title>
+  <!-- 모바일·PC에서 화면이 기기 폭에 맞게 표시되도록 설정 -->
+  <meta property="og:url" content="https://ps3542.github.io/portfolio/">
+  <meta property="og:title" content="SCheoul|포트폴리오">
+  <!-- 미리보기 카드의 제목을 "SCheoul|포트폴리오"로 표시 -->
+  <title>SCheoul portfolio</title>
 </head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  h1, h2, h3 {
+    color: #5f18a1;
+}
+p{font-size: 12px;}
+</style>
 <body>
-  <h1>&#128341;박성철의 Portfolio</h1>
- 
-  <h2>&#128336;Toy Project</h2>
-  
-  <div>
-    <a href="orders/orders.html" target="_blank">1. 주문서</a>
-    <a href="practice/1P.html" target="_blank">2. 연습문제1</a> 
+  <!-- navigat -->
+  <nav class="navbar navbar-default" style="background-color: rgba(248, 248, 248, 0.7);">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" style="transform: rotate(0deg);">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <!-- <span class="glyphicon glyphicon-home"</span> -->
+    "Global IT"
+    <p>PROGRESS</p>  
+    </a>
   </div>
+  <div class="collapse navbar-collapse animate__animated" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div> 
+  <div class="scroll_box">
+    <div class="scroll_per" style="width: 8.01925vw;"></div>
+  </div>
+  </nav>
+  <main>
+    <h1>SCheoul</h1>
+    <img src="for port.jpg" alt="note" style="width: 450px;">
+  <h2>Skills</h2>
+<div>
+  <p>Frontend <br>
+  HTML5, CSS3, jQuery JavaScript, TypeScript, React, ReactHook, Redux, VueJs, Vuex, Vite, NextJs, Flutter, Dart
+  </p>
+  <p>Backend <br>
+  Java, JavaSwing, JSP, Servlet, JDBC Python, Django, DjangoRestAPI, NodeJs, Postman, Swagger, Spring, SpringBoot, JPA(+JPQL), MyBatis Mapper, Lombok
+  </p>
+  <p>
+  Data <br>
+  MySQL, Sqlite3, Oracle MongoDB, MariaDB
+  </p>
+  <p>Management&IDEs <br>
+  Git, GitHub GitLab, VisualStudioCode, Eclipse, Maven, SQLDeveloper, HeidiSQL Notion, Slack, Jira
+  </p>
+  <p>Server&Hosting <br>
+  Heroku, Netlify, AWS, Apache Tomcat, Docker, Linux Ubuntu, VMware
+  </p>
+  <p>Design <br>
+  Figma, Tailwind, Bootstrap
+  </p>
+  <p>OS & Infra <br>
+  Linux(Ubuntu), VirtualBox Windows, MacOS
+  </p>
+</div>
+
+<div>ChatGpt를 활용한 AI 웹앱 서비스 개발자 양성 과정
+  <!-- 오른쪽에 아이콘을 이용한 링크로 수업내용을 바탕으로 나온 작업물 간단히 소개  -->
+  <ul>
+    <li>웹 개발 기본 프로그래밍 기술</li>
+    <li>생성형 AI기술</li>
+    <li>프론트엔드 서비스 기술</li>
+    <li>데이터 처리 기술</li>
+    <li>백엔드 서비스 기술</li>
+    <li>Mini 프로젝트</li>
+    <li>프레임워크 서비스 기술</li>
+    <li>모바일 서비스 기술</li>
+    <li>리눅스 OS 기술</li>
+    <li>실무 Final 프로젝트</li>
+      <!-- 표를 양쪽으로 반반느낌으로 나눠 놓기 -->
+  </ul>
+ </div>
+ <div>
+  2025년 8월 5일 ~ 2026년 2월 2일
+ </div>
+ <hr>
+  <section class="main" id="about">ABOUT ME
+    간단한 자기소개
+    <a href="#">깃허브</a>
+    <a href="#">노션</a>
+  </section>
+  <hr>
+  <section>
+   <h2>Portfolio</h2>
+    <ul>
+      <li>
+        <a href="practice/2-1P.html" target="_blank">HTML연습문제 2-1</a>
+      </li>
+      <li>
+        <a href="practice/2-2P.html" target="_blank">HTML연습문제 2-2</a>
+      </li>
+      <li>
+        <a href="practice/2-3P.html" target="_blank">HTML연습문제 2-3</a>
+      </li>
+      <li>
+        <a href="practice/2-4P.html" target="_blank">HTML연습문제 2-4</a>
+      </li>       
+      <li>
+        <a href="practice/2-5P.html" target="_blank">HTML연습문제 2-5</a>
+      </li>
+    </ul>
+  <!-- 포트폴리오용 이미지 구한 후 이미지 하단에 링크 부여 > 링크에 사이트, 깃허브, 닫기버튼 만들기  -->
+  </section>
+</main>
+<footer>
+  <h3>CONTACT</h3>
+  <ul>
+    <li>전화번호</li>
+    <li>이메일</li>
+    <li><a href="#">사이트</a></li>
+  </ul>
+</footer>
 
 </body>
 </html>
