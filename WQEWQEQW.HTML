@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이미지 위 글자</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    /* 박스를 가운데 정렬 */
+    .box {
+        width: 200px;
+        height: 200px;
+        position: relative; /* 글자 위치 기준 */
+        margin: 100px auto; /* 상단 100px, 좌우 가운데 */
+        background-color: white;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    /* 이미지 */
+    .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* 이미지 위 글자 */
+    .box .text {
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <img src="for port.jpg" alt="이미지">
+    <div class="text">여기에 글자</div>
+</div>
+
+</body>
+</html>

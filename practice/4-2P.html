@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS연습문제 4-2,3</title>
+  <style>
+    *{margin: 0; padding: 0;}   
+    #header{
+      width: 100%; 
+      height: 100px;
+      line-height: 100px;
+      background-color: #222;
+      color: white;
+    }
+    .topnav{      
+      overflow: hidden;
+      background-color: gray;     /*c,d,e 는 전부다 회색*/
+      }
+    .topnav a{
+      float: left;
+      color: azure;
+      text-align: center;
+      padding: 12px 14px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .topnav a:hover{
+      background-color: #e7d7d7;
+      color: rgb(7, 7, 7);
+    }
+    .topnav a.active{
+      background-color: rgb(70, 68, 68);
+      color: white;
+    }
+   
+    #article{
+      width: 80%;
+      height: 500px;
+      background-color: azure;
+      float: left;
+      text-align: center;
+      overflow: hidden;
+      
+    }
+    .container {
+        width: 440px; /* 박스 2개 + 간격 합친 고정폭 */
+        margin: 60px auto; /* 위쪽 100px, 좌우 자동 -> 가운데 정렬 */
+        overflow: hidden; /* float 해제 (clearfix) */
+    }
+
+    /* 박스 스타일 */
+    .box {
+        float: left; /* 가로로 배치 */
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-right: 20px; /* 박스 사이 간격 */
+    }
+
+    /* 마지막 박스는 오른쪽 간격 제거 */
+    .box:last-child {
+        margin-right: 0;
+    }
+
+    /* 박스 안 이미지 */
+    .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0px -70px;
+    }
+        
+    #aside{
+      width: 20%;
+      height: 500px;
+      line-height: 500px;
+      background-color: beige;
+      float: left;
+      text-align: center;
+    }
+    #footer{
+      clear: both;
+      height: 100px;
+      background-color: #ccc
+    }
+  </style>
+</head>
+<body>
+  <!-- 머리말 ------------------------------------------------------------------->
+  <div id="header"> <h1>글로벌아이티</h1></div>
+  <!-- /머리말 -->
+  <!-- navigation --------------------------------------------------------------->
+  <div class="topnav a">
+    <a class="active" href="#">교육원 소개</a>
+    <a href="#">교육원 연혁</a>
+    <a href="#">과정소개</a>
+    <a href="#">Contact</a>
+  </div>
+  <!-- /navigation -->
+   <!-- 컨텐츠 ------------------------------------------------------------------>
+  <div id="article"> <br> <h2>글로벌아이티 소개</h2>
+    <div class="container">
+    <div class="box">
+      <img src="images/1.png" alt="소개1">
+    </div>
+    <div class="box">
+      <img src="images/2.png" alt="소개2">
+    </div>
+  </div></div>
+  <!-- /컨텐츠 -->
+  <!-- 광고 ------------------------------------------------------------------------->
+  <div id="aside">광고</div>
+  <!-- /광고 -->
+  <!-- 꼬리말 ------------------------------------------------------------------------->
+  <div id="footer">&copy;All rights reserved by 글로벌아이티</div>
+  <!-- /꼬리말 -->
+  
+  
+</body>
+</html>

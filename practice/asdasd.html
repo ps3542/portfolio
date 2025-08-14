@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>가운데 정렬된 박스 2개 - float 방식</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    /* 컨텐츠 전체 래퍼 */
+    .container {
+        width: 440px; /* 박스 2개 + 간격 합친 고정폭 */
+        margin: 100px auto; /* 위쪽 100px, 좌우 자동 -> 가운데 정렬 */
+        overflow: hidden; /* float 해제 (clearfix) */
+    }
+
+    /* 박스 스타일 */
+    .box {
+        float: left; /* 가로로 배치 */
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-right: 20px; /* 박스 사이 간격 */
+    }
+
+    /* 마지막 박스는 오른쪽 간격 제거 */
+    .box:last-child {
+        margin-right: 0;
+    }
+
+    /* 박스 안 이미지 */
+    .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">
+        <img src="https://via.placeholder.com/200" alt="이미지 1">
+    </div>
+    <div class="box">
+        <img src="https://via.placeholder.com/200" alt="이미지 2">
+    </div>
+</div>
+
+</body>
+</html>
