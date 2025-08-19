@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS연습문제 6-1</title>
+  <style>
+    a{
+      text-decoration: none;
+    }
+    .box{
+      gap: 20px;
+      display: flex;
+      text-align: center;
+      padding: 10px;
+    }
+    #box1{
+      width: 80px;
+      height: 30px;
+      border: 1px solid green;
+    }
+    #box1>a{
+      color: green;
+      display: block;
+      width: 80px;
+      height: 100%;
+      line-height: 25px;
+    }
+    #box1 a:hover{
+      color: white;
+      background-color: green;
+    }
+    #box2{
+      width: 80px;
+      height: 30px;
+      border: 1px solid; /* 얇은 선 */
+      border-image: linear-gradient(to right, red, blue) 1;
+      }
+    #box2>a{
+      color: rgb(63, 69, 150);
+      display: block;
+      width: 80px;
+      height: 100%;
+      line-height: 25px;      
+    }
+    #box2 a:hover{
+      background-color: blue;
+      color: white;
+    }
+    #box3{
+      width: 80px;
+      height: 30px;
+      border: 1px solid black;
+      }
+    #box3>a{
+      color: black;
+      display: block;
+      width: 80px;
+      height: 100%;
+      line-height: 25px;      
+    }
+    #box3 a:hover{
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div id="box1"><a href="https://www.naver.com" target="_blank">네이버</a></div>
+    <div id="box2"><a href="https://www.google.com" target="_blank">구글</a></div>
+    <div id="box3"><a href="https://www.chatgpt.com" target="_blank">Chat Gpt</a></div>
+  </div>
+</body>
+</html>
