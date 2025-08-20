@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS연습문제 7</title>
+  <style>
+    a{text-decoration: none; color: black;}
+    
+  .box {display: flex; gap: 15px; margin: 5px;}
+    /* 부모 박스 */
+   .container {
+     width: 300px;
+     border: 1px solid #ccc;
+     overflow: hidden;
+     position: relative;
+     object-fit: cover;
+    }       
+    .container img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* 자식박스 */
+    .overlay {
+      position: absolute; /* 자식 박스 포지션은 어지간하면 absolute 혹은 fixed */ 
+      width: 100%; /* 부모 박스와 가로넓이 맞추기 */
+      height: 50px; left: 0; bottom: 0; /* 부모 박스에서의 자식박스 위치 조정 */
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;      
+      transition: height 0.4s ease;
+    
+    }
+   /* 텍스트 기본 상태 */
+    .text-default {
+      position: absolute;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* 텍스트 호버 상태 */
+    .text-hover {
+      position: absolute; bottom: 20px; left: 10px; right: 10px;
+      opacity: 0; 
+      transition: opacity 0.3s ease;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* 호버 시 회색 박스 차오름 */
+    .container:hover .overlay {
+      height: 100%;
+    }
+
+    /* 호버 시 텍스트 변경 */
+    .container:hover .text-default {
+      opacity: 0;
+    }
+
+    .container:hover .text-hover {
+      opacity: 0.7;
+    }
+    .text-hover>a{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <p style="padding-left: 20px;"><span><a href="#" style="color: orange;">핫토픽</a></span> &gt; <span><a href="#">주말 체크인</a></span></p>
+  <div class="box">
+    <div class="container">
+      <img src="images/7-1.png" alt="축제 이미지">
+      <div class="overlay">
+        <div class="text-default">춘천 마임 축제로 어서오세요!</div>
+        <div class="text-hover"><a href="http://mimefestival.com/" target="_blank">2025 춘천마임축제는 '몸풍경'을 주제로 5월 25일부터 6월 1일까지 개최되며 개막난장 아!水라장을 시작으로 밤샘난장 도깨비난장까지 8일간 다양한 몸풍경을 춘천시 곳곳에서 선보인다.</a></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="images/7-2.png" alt="축제 이미지">
+      <div class="overlay">
+        <div class="text-default">강아지 모델 선발대회</div>
+        <div class="text-hover"><a href="https://news.mt.co.kr/photonews/photovod_view.html?no=201110171127486163" target="_blank">17일 오전 서울 강남구 청담동 반려동물 종합 서비스 공간 이리온에서 슈퍼모델 강아지를 선발하고 있다.</a></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="images/7-3.png" alt="축제 이미지">
+      <div class="overlay">
+        <div class="text-default">전독시 영화화</div>
+        <div class="text-hover"><a href="https://cgv.co.kr/" target="_blank">10년 이상 연재된 소설이 완결된 날 소설 속 세계가 현실이 되어 버리고, 유일한 독자였던 ‘김독자’가 소설의 주인공 ‘유중혁’ 그리고 동료들과 함께 멸망한 세계에서 살아남기 위한 판타지 액션 영화</a></div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

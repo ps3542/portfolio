@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gowun+Batang&family=Jua&family=Monoton&display=swap');
+/* Reset CSS */
+* { margin: 0; padding: 0;}
+a {text-decoration: 0; color: #ccc;}
+ol ul {list-style: none;}
+body{position: fixed;width: 100%;height: 100%;background: #111;}
+
+/* 배경동영상 - full screen */
+.vid{width: 100%;height: 100%;position: fixed;top: -60px;left: 0px;opacity: 0.9;}
+.vid video{
+  width: 100%; 
+  min-width: 1600px; /* 1600px이상 */
+}
