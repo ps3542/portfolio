@@ -8,21 +8,19 @@
   <title>토이 프로젝트1</title>
 </head>
 <body>
-   <!-- 배경동영상 ---------------------------------------------------------------------------->
+   <!-- 배경동영상 -->
   <figure class="vid">
     <video loop autoplay muted>
       <source src="img/chi2.mp4" type="video/mp4">
     </video>
   </figure>
-  <!-- /배경동영상-->
-  <!-- 로고 영역 -->
- 
 
-  
-  <!-- /로고 영역 -->
-  <!-- nav영역 -->
-   <header>
-     <ul id="nav">
+  <!-- Header + nav -->
+  <header>
+    <div class="logo">
+      <a href="#"><img src="img/logo.png" alt="로고"></a>
+    </div>
+    <ul id="nav">
       <li><a href="#">메뉴</a>
         <ul>
           <li><a href="#">신메뉴</a></li>
@@ -38,12 +36,12 @@
           <li><a href="#">당첨자 발표</a></li>
         </ul>
       </li>
-      <li><a href="">매장안내</a>
+      <li><a href="#">매장안내</a>
         <ul>
           <li><a href="#">매장안내</a></li>
         </ul>
       </li>
-      <li><a href="">오빠닭 STORY</a>
+      <li><a href="#">오빠닭 STORY</a>
         <ul>
           <li><a href="#">브랜드 소개</a></li>
           <li><a href="#">창업안내</a></li>
@@ -51,19 +49,26 @@
           <li><a href="#">뉴스</a></li>
         </ul>
       </li>
+      <div style="display: flex;">
+      <li><button type="button" class="id">로그인</button></li>
+      <li><button type="button" class="id">회원가입</button></li>
+      </div>
     </ul>
-    <div class="lg">
-      <div>
-        <button type="button" value="로그인">로그인</button>
-      </div>
-      <div> 
-        <button type="button" value="회원가입">회원가입</button>
-      </div>
+  </header>
+  <section>
+    <div style="text-align: center; padding-top: 30px; font-size: 30px;" >기분에 따라 오늘은 이거닭!</div><br>
+    <div style="display: flex; justify-content: center;">
+      <div># NEW 새로 나왔어요</div>
+      <div># 인기메뉴</div>
+      <div># 오빠닭 시그니처!</div>
+      <div># 기분업닭!</div>
+    </div> <br>
+    <div class="box">
+      <div id="box1">BEST 3  로스트샘플러</div>
+      <div id="box2">BEST 1  치즈에빠진닭 매콤</div>
+      <div id="box3">BEST 2  월남쌈샘플러</div>
     </div>
-   </header>
-
-
-
-   <!-- /nav영역 -->
+  
+  </section>
 </body>
 </html>
