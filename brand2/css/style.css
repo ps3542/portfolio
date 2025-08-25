@@ -4,6 +4,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box;}
 a {text-decoration: none; color: #ccc;}
 ul li{list-style: none;}
+p{
+  color: gray;
+  font-size: 13px;
+  opacity: 0.6;
+}
 body {
   width: 100%;
   height: 100%;
@@ -149,24 +154,88 @@ section{
   height: 345px;
   font-family: "Jua";
 }
-.box{
-  display: flex; justify-content:center; gap: 30px; align-items: center;
-  line-height: 150px;
+.box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start; /* 위쪽 기준으로 정렬 */
 }
-#box1{
-  width: 220px;
-  height: 150px;
+
+.box > div {
+  
+  flex-direction: column; /* 세로 정렬 */
+  justify-content: center; /* 세로 가운데 */
+  align-items: center;     /* 가로 가운데 */
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden; /* 내용이 넘칠 때 박스 밖으로 안나오게 */
+}
+
+#box1, #box2, #box3 {
+  width: 240px;
+  height: 170px;
+  padding-top: 30px;
+}
+
+#box1 {
   background-color: white;
 }
-#box2{
+
+#box2 {
   margin-top: 30px;
-  width: 220px;
-  height: 150px;
   background-color: red;
   color: white;
 }
-#box3{
-  width: 220px;
-  height: 150px;
+
+#box3 {
   background-color: white;
 }
+
+#box2 button {
+  margin-top: 10px;
+}
+
+.box4{
+  margin: 14px;
+  font-size: 20px;
+}
+.bt{
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  width: 90px;
+  height: 30px;
+  font-size: 12px;
+}
+
+/* contents 레이아웃 */
+#side { width:800px; height:100%; position:fixed; bottom:0px; right:-800px; background:#111; opacity:0.5; transform:skewX(-40deg); transition:all 0.5s;}
+#side:hover { right:-500px; opacity:0.8;}
+#side .con { width:400px; height:100%; position:absolute; left:150px; bottom:0px; background:#000; 	box-sizing:border-box; padding:10px; transition:all  1s;}
+#side:hover .con { left:50px;}
+
+/* contents내 썸네일 */
+#side .con p { width: 300px; height:100px; position:absolute; left:50px;}
+#side .con p em { display:inline-block; font:bold 16px/1.7 arial; color:#a0bd50; transform:skewX(40deg);}
+#side .con p img { width:300px; height:70px; opacity:0.3; transition:all 0.5s;}
+#side .con p img:hover { opacity:1;}
+#side .con p:nth-child(1) { bottom:270px; transform: translateX(200px); transition:all  0.4s;}
+#side .con p:nth-child(2) { bottom:160px; transform: translateX(200px); transition:all  0.8s;}
+#side .con p:nth-child(3) { bottom:50px; transform: translateX(200px); transition:all  1.2s;}
+#side:hover .con p { transform:translateX(0px);}	
+
+/* 자동롤링 버튼*/
+#side .btnContents { width:150px; height:50px; position:absolute;  bottom:40px; left:100px; color:#b9fb05;	transform:skewX(40deg); }
+#side:hover .btnContents { left:700px;}	
+.btnContents i { font-size:60px; position:absolute; bottom:0px; right:0px; opacity:0;}
+.btnContents i:nth-child(1) { animation:ani linear 1.5s 0s infinite;}
+.btnContents i:nth-child(2) { animation:ani linear 1.5s 0.5s infinite;}
+.btnContents i:nth-child(3) { animation:ani linear 1.5s 1.0s infinite;}
+
+
+@keyframes ani {
+	0% { right:0px; transform:sclae(1); opacity:0;}
+	100% { right:100px; transform:scale(1.5); opacity:1;}
+}
+
