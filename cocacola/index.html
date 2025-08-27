@@ -18,6 +18,37 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- /slick slider -->
   <style>
+    .btn1{
+      padding-left: 140px;
+    }
+    .btn1 .btn{
+      width: 350px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+    ul, li, h6, i{
+      list-style: none;
+      color: white;
+    }
+    h6{
+      font-size: 12px;
+      font-weight: lighter;
+    }
+    .left{
+      font-weight: bold;
+      padding: 0;
+    }
+    .left li{
+      padding-top: 9px;
+      font-size: 14px;
+    }
+    
+    .navbar{
+      background-color: white;
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 100px !important;
+    }
     body{
       background-color: #eeeeee;
     }
@@ -90,7 +121,7 @@
       text-align: center;
     }
     .thumbnail p{
-      padding: 20px;
+      padding: 5px;
       padding-top: 30px;
     }
     .thumbnail img{
@@ -107,12 +138,64 @@
       top: -12px;
     }
     .container{
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+   .container h1{
+      padding-bottom: 10px;
       text-align: center;
     }
-    .container h1{
-      padding-bottom: 10px;
+    #story{
+      /* position: relative; */
     }
-    
+    #story .col-md-6,
+    #tommorow .col-md-6{
+      border-radius: 10px !important;
+      background-color: white;
+      /* position: absolute; */
+    }
+    #story .col-md-6 img,
+    #tommorow .col-md-6 img{
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    #story .col-md-6:nth-child(1){
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 99999;
+      float: left;
+    }
+    #story .col-md-6:nth-child(2){
+      top: 100px !important;
+      right: 600px !important;
+      float: left;
+    }
+
+    #brand .col-md-4{
+      background-color: white;
+      box-sizing: border-box;
+      border: 5px solid #eeeeee;
+      transition: 0.2s;
+    }
+
+    #brand .col-md-4 img{
+      width: 100%;
+    }
+    #brand .col-md-4:hover{
+      transform: scale(1.05);
+    }
+
+    footer.container-fulid{
+      background-color: black;
+    }
+
+    #collapsibleNavbar .dropdown-toggle:hover+.dropdown-menu{
+      display: block;
+    }
+
+
+
     @media screen and (max-width:767px) {
     .slide{text-align: center;}
     .slider .slide img {
@@ -139,13 +222,17 @@
     .more .btn{
       margin-left: -50px;
     }
-    .container{
+    .container1{
       position: relative;
-      top: 180px;
+      top: 140px;
+      text-align: center;
+      padding-bottom: 150px;
+    }
+    .btn1{
+      padding-left: 50px;
     }
   }
-  
-      
+        
   </style>  
   <script>
     $(document).ready(function(){
@@ -168,6 +255,44 @@
   </script>
 </head>
 <body>
+  <!-- navigation -------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="images/Coke-company-logo-black.svg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Brands</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Discover</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Brand Story</a></li>
+            <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
+            <li><a class="dropdown-item" href="#">Originals</a></li>
+            <li><a class="dropdown-item" href="#">Opener</a></li>
+            <li><a class="dropdown-item" href="#">Creations</a></li>
+            <li><a class="dropdown-item" href="#">CokePLAY App</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sustainability</a>
+        </li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- /navigation -->
   <!-- slider ----------------------------------------->
   <div class="slider-container">
     <div class="slider">
@@ -231,7 +356,7 @@
   <!-- /slider -->
 
   <!-- 이달의 PICK  --------------------------------------------------------------->
-  <div id="pick" class="container">
+  <div id="pick" class="container1">
     <h1>이달의 PICK</h1>
     <div class="row">
       <div class="col-md">
@@ -258,5 +383,111 @@
     </div>
   </div>
   <!-- /이달의 PICK -->
+
+  <!-- story ---------------------------------->
+  <div id="story" class="container pt-5">
+    <div class="row">
+    <div class="col-md-6">
+      <h3>코카-콜라 Real Magic 스토리</h3>
+      <p>1886년 탄생 이후, 코카-콜라가 걸어온 130여 년의 짜릿한<br>여정! 그 마법같은 이야기 속으로 초대합니다.</p>
+      <div class="btn1">
+        <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+      </div>
+    </div>    
+    <div class="col-md-6">
+      <img src="images/co-ca.png" alt="coca-cola">
+    </div>
+  </div>
+  </div>
+  <!-- /story -->
+  <!-- tommorow -->
+  <div id="tommorow" class="container">
+    <div class="row">
+    <div class="col-md-6">
+      <img src="images/co-ca2.png" alt="coca-cola">
+    </div>
+    <div class="col-md-6">
+      <h3>지속 가능한 미래</h3>
+      <p>지속 가능한 미래를 만들기 위한 코카-콜라의 다양한 활동들을<br>만나보세요. 전 세계 사람들의
+        삶과 지역사회에 긍정적인 변화<br>를 만들어 나가기 위해 노력하고 있습니다.</p>
+      <div class="btn1">
+        <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+      </div>
+    </div>    
+  </div>
+  </div>
+  <!-- /tommorow -->
+  
+  <!-- 브랜드 살펴보기 --------------------------------------------------->
+  <div id="brand" class="container">
+    <h1>브랜드 살펴보기</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/brand01.png" alt="cocacola">
+      </div>
+      <div class="col-md-4">
+        <img src="images/brand02.png" alt="sprite">
+      </div>
+      <div class="col-md-4">
+        <img src="images/brand03.png" alt="fanta">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/brand04.png" alt="peper">
+      </div>
+      <div class="col-md-4">
+        <img src="images/brand05.png" alt="powerade">
+      </div>
+      <div class="col-md-4">
+        <img src="images/brand06.png" alt="georgia">
+      </div>
+    </div>
+    <a class="btn btn-outline-dark" href="#">모두 보기</a>
+  </div>
+  <!-- /브랜드 살펴보기 -->
+  
+  <!-- footer ----------------------------------------------->
+  <footer class="container-fulid">
+    <div class="container">
+      <img src="images/logo-white-large.svg" alt="coca-cola logo">
+      <hr style="border: 1px solid white;">
+      <div class="row">
+        <div class="col-md-2">
+          <h6>소개</h6>
+            <ul class="left">
+              <li>기업 소개</li>
+              <li>히스토리</li>
+              <li>채용</li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+           <h6>도움이 필요하세요?</h6>
+            <ul class="left">
+              <li>사이트 맵</li>
+              <li>고객 안내</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+           <h6>법적고지</h6>
+            <ul class="left">
+              <li>이용 약관</li>
+              <li>쿠키 정책</li>
+              <li>쿠키 설정</li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-square-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+     <hr style="border: 1px solid white;">
+      <p style="color: white; text-align: right;">© 2024 The Coca‑Cola Company. 판권 소유</p>
+    </div>
+  </footer>
+
+  <!-- /footer -->
 </body>
 </html>
