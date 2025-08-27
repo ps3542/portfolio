@@ -138,14 +138,6 @@ button {
   cursor: pointer;
   font-size: 14px;
 }
-
-@media screen and (max-width: 768px) {
-  #nav { gap: 20px; }
-  #nav>li>a { font-size: 14px; }
-  button { width: 60px; font-size: 12px; }
-}
-
-
 section{
   background-color: rgb(248, 244, 237);
   z-index: 10;
@@ -186,19 +178,8 @@ section{
       height: 368px;
     }
         
-    @media screen and (max-width:767px) {
-    .slide{text-align: center;}
-    .slider .slide img {
-      width: 100%;
-      height: 700px;
-      border-radius: 10px;
-    }
     
-    .slider-pc{display: none !important;}  
-    .slider-m{display: block !important;}   
-   }
-  
- .inquiry-box {
+    .inquiry-box {
       background-color: #b71c1c; /* 배경색 */
       color: white;
       padding: 20px;
@@ -206,30 +187,30 @@ section{
       display: flex;
       align-items: center;
       gap: 15px;
-      position: absolute;
+      position: fixed;
       bottom: 0px;
       width: 100%;
       height: 61px;
-   
-     
+      
+      
     }
     .inquiry-title {
       font-size: 20px;
       font-weight: bold;
       margin-right: 30px;
-     
+      
     }
     .form-group {
       display: flex;
       gap: 10px;
       align-items: center;
       flex: 1;
-       
+      
     }
     .form-group label {
       font-size: 14px;
       font-weight: bold;
-     
+      
     }
     input[type="text"],
     select {
@@ -237,7 +218,7 @@ section{
       border: none;
       border-radius: 3px;
       outline: none;
-    
+      
     }
     input[type="radio"] {
       margin-left: 10px;
@@ -268,3 +249,60 @@ section{
       font-weight: bold;
       cursor: pointer;
     }
+    .event{
+      background-color: #eeeeee;
+      text-align: center;
+      padding-top: 35px;
+      height: 170px;
+    }
+    .event p{
+      color: black;
+      font-size: 17px;
+    }
+    .search{
+      text-align: center;
+      padding-top: 20px;
+    }
+    .search p{
+      color: black;
+      font-size: 17px;
+    }
+    .search span{font-weight: bold;}
+    .set{
+      border: 1px solid red;
+      width: 380px;
+      margin-left: 60px;
+      padding-right: 90px;
+      margin-top: 70px;
+    }
+    .set i{
+      padding-left: 140px;
+      color: red;
+    }
+     input::placeholder {
+  color: red;   /* 원하는 색상 */
+  opacity: 1;    /* 투명도 (기본값은 0.5~0.7 정도로 브라우저마다 다름) */
+    }
+    .store img{
+      width: 100%;
+      height: 280px;
+    }
+    .store{  
+      margin: -70px;
+    }
+    @media screen and (max-width:768px) {
+    .slide{text-align: center;}
+    .slider .slide img {
+      width: 100%;
+      height: 460px;
+      border-radius: 10px 10px 0 0;
+    }
+    .inquiry-box{opacity: 0;}
+    
+    .slider-pc{display: none !important;}  
+    .slider-m{display: block !important;}   
+     #nav{display: none;}
+    .logo{padding-left: 150px;}
+    .vid{display: none;}
+    }
+    
