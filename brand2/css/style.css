@@ -254,6 +254,7 @@ section{
       text-align: center;
       padding-top: 35px;
       height: 170px;
+      display: none;
     }
     .event p{
       color: black;
@@ -262,6 +263,7 @@ section{
     .search{
       text-align: center;
       padding-top: 20px;
+      display: none;
     }
     .search p{
       color: black;
@@ -304,5 +306,11 @@ section{
      #nav{display: none;}
     .logo{padding-left: 150px;}
     .vid{display: none;}
+    .event{
+      display: block;
+    }
+    .search{
+      display: block;
+    }
     }
     
