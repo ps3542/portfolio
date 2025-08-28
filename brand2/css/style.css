@@ -271,20 +271,19 @@ section{
     }
     .search span{font-weight: bold;}
     .set{
+      display: block;
       border: 1px solid red;
-      width: 380px;
-      margin-left: 60px;
-      padding-right: 90px;
-      margin-top: 70px;
+      width: 300px;
+      margin: 0 auto;
+      padding-right: 10px;
+      margin-top: 80px;
+      z-index: 999999 !important;
     }
     .set i{
-      padding-left: 140px;
+      padding-left: 70px;
       color: red;
     }
-     input::placeholder {
-  color: red;   /* 원하는 색상 */
-  opacity: 1;    /* 투명도 (기본값은 0.5~0.7 정도로 브라우저마다 다름) */
-    }
+
     .store img{
       width: 100%;
       height: 280px;
@@ -293,6 +292,7 @@ section{
       margin: -70px;
     }
     @media screen and (max-width:768px) {
+    *{padding: 0; margin: 0;}
     .slide{text-align: center;}
     .slider .slide img {
       width: 100%;
@@ -304,13 +304,19 @@ section{
     .slider-pc{display: none !important;}  
     .slider-m{display: block !important;}   
      #nav{display: none;}
-    .logo{padding-left: 150px;}
+    .logo{
+     padding-left: 100px;
+    }
     .vid{display: none;}
     .event{
       display: block;
     }
     .search{
       display: block;
+    }
+    input::placeholder {
+    color: red;   /* 원하는 색상 */
+    opacity: 1;    /* 투명도 (기본값은 0.5~0.7 정도로 브라우저마다 다름) */
     }
     }
     
