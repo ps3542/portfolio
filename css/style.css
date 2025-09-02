@@ -325,14 +325,6 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
     }      
-    #footer-pc h6{
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    #footer-pc li{
-      font-weight: lighter;
-    }
     /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!모바일용!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
     @media screen and (max-width:767px) {
     
