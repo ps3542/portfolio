@@ -2,10 +2,7 @@
     
     body{background-color: #eeeeee !important;}
     .container{
-      padding: 0.5%;
-    }
-    .btn1{
-      padding-left: 140px;
+      padding: 3%;
     }
     .btn1 .btn{
       width: 350px;
@@ -163,6 +160,10 @@
       filter: brightness(70%);      
     }
 
+    .slider .slide .thumbnail img{
+      filter: brightness(100%);
+    }
+
     /* -------------------------------------------------- 이달의 픽--------------------------------------------- */
     #month-pick{
       padding: 50px 0 !important;
@@ -173,11 +174,18 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       width: 100%;
-      height: 300px !important;
+      height: 280px !important;
     }
     .thumbnail{
       text-align: center;
       background-color: white;
+      border-radius: 10px;
+      height: 470px !important;
+    }
+    .thumbnail p{
+      padding-top: 40px;
+      font-size: 20px;
+      font-weight: bold;
     }
     .thumbnail i{
       position: relative;
@@ -188,13 +196,23 @@
       padding-bottom: 10px;
       text-align: center;
     }
+
     #story .col-md-6,
     #tommorow .col-md-6{
       border-radius: 10px !important;
       background-color: white;
       height: 500px !important;
       padding: 0;     /* 안쪽 여백 없애기. 이미지가 부모박스에 가득차 보이게 */
-      
+    }
+    #story .col-md-6 .btn1,
+    #tommorow .col-md-6 .btn1{
+      padding-top: 200px;
+      text-align: center;
+    }
+    #story .col-md-6 .caption,
+    #tommorow .col-md-6 .caption{
+      margin-top: 60px;
+      margin-left: 60px;
     }
     #story .col-md-6 img,
     #tommorow .col-md-6 img{
@@ -206,20 +224,24 @@
     #tommorow .row{
       display: flex !important;
       align-items: center;
-      height:  590px!important;
+      height:590px!important;
    
     }
     #story .col-md-6:nth-child(1){
       align-self: flex-start !important;
+      width: 600px;
     }
     #story .col-md-6:nth-child(2){
       align-self: flex-end !important;
+      width: 800px !important;
     }
     #tommorow .col-md-6:nth-child(1){
       align-self: flex-end !important;
+      width: 800px !important;
     }
     #tommorow .col-md-6:nth-child(2){
       align-self: flex-start !important;
+      width: 600px !important;
     }
     #story .col-md-6:nth-child(1),
     #tommorow .col-md-6:nth-child(1){
@@ -417,10 +439,7 @@
       .more .btn{
         margin-left: -50px;
       }
-      .btn1{
-        padding-left: 50px;
-      }
-      #story .col-md-6:nth-child(1){
+        #story .col-md-6:nth-child(1){
         width: 400px !important;
         height: 200px !important;
         margin-left: auto !important;
