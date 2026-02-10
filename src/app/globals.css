@@ -1,0 +1,1141 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css");
+
+/* src/app/globals.css */
+:root {
+  --accent: #0d6efd;
+  --topbar-h: 60px;
+
+  /* zunedaalim.com 느낌: 거의 붙는 좌우 여백 */
+ --edge: clamp(18px, 2.2vw, 36px);
+
+
+  /* 리듬 */
+  --section-y: 88px;
+  --line: rgba(0, 0, 0, 0.12);
+  --muted: rgba(0, 0, 0, 0.62);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* sticky topbar 때문에 앵커 이동 시 제목이 가려지는 것 방지 */
+section[id],
+header[id] {
+  scroll-margin-top: calc(var(--topbar-h) + 16px);
+}
+
+/* overall tone */
+body {
+  background: #f3f1ec;
+  color: #111;
+  font-family: "Pretendard Variable", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Noto Sans KR", sans-serif;
+}
+
+/* section rhythm */
+.section {
+  padding: var(--section-y) 0;
+}
+
+.section-soft {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-title {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- global width: "거의 풀-블리드 + 얇은 안전 여백" ---------- */
+.container {
+  width: 100%;
+  max-width: none;
+  padding-left: var(--edge) !important;
+  padding-right: var(--edge) !important;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 var(--edge);
+}
+
+/* ---------- hero-top ---------- */
+.hero-top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(243, 241, 236, 0.92);
+  backdrop-filter: blur(8px);
+  height: var(--topbar-h);
+}
+
+.hero-topbar {
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+}
+
+.hero-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.hero-role {
+  font-size: 14px;
+  opacity: 0.72;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.72;
+}
+.hero-nav a:hover {
+  opacity: 1;
+}
+
+.hero-nav-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.18);
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.hero-nav-ext {
+  opacity: 0.85 !important;
+}
+
+/* ---------- hero (기존 유지) ---------- */
+.hero {
+  min-height: calc(100vh - var(--topbar-h));
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(18px, 4vh, 48px) 0 clamp(28px, 7vh, 88px);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.hero-kicker {
+  font-weight: 800;
+  font-size: 30px;
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-family: "Pretendard Variable", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: clamp(50px, 7vw, 90px);
+  margin-bottom: 18px;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.hero-title-center {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 100px;
+}
+
+.hero-subtitle {
+  max-width: 34ch;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.75;
+}
+
+.hero-cta {
+  border-radius: 999px;
+  padding: 12px 18px;
+  border-width: 2px;
+}
+
+.hero-photo {
+  margin-right: 140px;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+
+  background-color: rgba(0, 0, 0, 0.08); /* ✅ 변경 */
+  background-size: cover;               /* ✅ 추가 */
+  background-position: center;          /* ✅ 추가 */
+  background-repeat: no-repeat;         /* ✅ 추가 */
+
+  overflow: hidden;
+}
+
+/* right stamp */
+.hero-stamp {
+  text-align: right;
+}
+
+.hero-stamp small {
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.hero-stamp strong {
+  font-size: clamp(64px, 7vw, 110px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+/* ---------- reference-like section typography ---------- */
+.ref-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+.ref-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ref-heading h2 {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: clamp(22px, 2.2vw, 34px);
+}
+
+.ref-heading .ref-sub {
+  margin: 0;
+  color: var(--muted);
+  max-width: 74ch;
+  line-height: 1.7;
+}
+
+.hr-line {
+  border-top: 1px solid var(--line);
+}
+
+.ref-note {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---------- services: numbered rows + tool tags ---------- */
+.service-list {
+  border-top: 1px solid var(--line);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-no {
+  font-weight: 800;
+  opacity: 0.75;
+  letter-spacing: 0.12em;
+}
+
+.service-title {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.service-tag {
+  white-space: nowrap;
+}
+
+/* ---------- works: list style ---------- */
+.works-grid {
+  /* services의 "본문 시작선"(92px + gap)과 동일하게 맞춤 */
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 22px;
+}
+
+.works-counter {
+  position: sticky;
+  top: calc(var(--topbar-h) + 22px);
+  align-self: start;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: clamp(56px, 6.6vw, 110px);
+  opacity: 0.9;
+  user-select: none;
+}
+
+.works-counter-zero {
+  opacity: 0.35;
+}
+
+.works-counter-digit {
+  opacity: 0.95;
+}
+
+.works-list {
+  margin-top: 0;
+}
+
+.work-card {
+  padding: 18px 300px;
+  border-bottom: 1px solid var(--line);
+}
+
+.work-card-inner {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  /* 카드가 너무 커 보이면 여기 max-width로 "정사각형처럼" 작게 보이게 */
+  max-width: clamp(560px, 48vw, 900px);
+}
+
+.work-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.work-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.work-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.work-title {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.work-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tag {
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.tag-solid {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- skills: big words + tag clouds ---------- */
+.big-words {
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  font-size: clamp(36px, 5.2vw, 96px);
+  margin: 0;
+}
+
+.skill-block {
+  margin-top: 28px;
+}
+
+.skill-block h3 {
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+  margin-bottom: 12px;
+}
+
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-pill {
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ---------- about ---------- */
+.about-wrap {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 18px;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- contact/footer ---------- */
+.contact-wrap {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 18px;
+}
+
+.contact-title {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: clamp(26px, 3vw, 44px);
+}
+
+.form-min input,
+.form-min textarea {
+  border-radius: 14px !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-grid h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.footer-grid a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+}
+.footer-grid a:hover {
+  opacity: 1;
+}
+
+.localtime {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* scroll-to-top */
+.to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(243, 241, 236, 0.92);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
+.to-top:hover {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --edge: 16px;
+    --section-y: 72px;
+  }
+
+  .hero-nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .service-row {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .works-grid {
+    grid-template-columns: 72px 1fr;
+    gap: 18px;
+  }
+
+  .works-counter {
+    top: calc(var(--topbar-h) + 16px);
+    font-size: clamp(44px, 10vw, 84px);
+  }
+
+  .work-card-inner {
+    max-width: 100%;
+  }
+
+  .work-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-tags {
+    justify-content: flex-start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- scroll reveal (subtle) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 420ms ease-out, transform 520ms ease-out;
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ---------- reference-like dark panel (what i do) ---------- */
+.panel {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.panel-dark {
+  background: radial-gradient(1200px 500px at 30% 0%, rgba(255,255,255,0.06), transparent 55%),
+              linear-gradient(180deg, #0b0b0b, #060606);
+  color: rgba(236, 231, 222, 0.92);
+  padding: clamp(26px, 4vw, 56px);
+}
+
+.panel-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: end;
+}
+
+.panel-title-big {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-size: clamp(64px, 7vw, 150px);
+  line-height: 0.92;
+  color: rgba(236, 231, 222, 0.88);
+}
+
+.panel-right {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.panel-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  opacity: 0.65;
+  padding-top: 6px;
+}
+
+.panel-desc {
+  margin: 0;
+  max-width: 56ch;
+  line-height: 1.8;
+  color: rgba(236, 231, 222, 0.72);
+}
+
+.panel-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: clamp(22px, 3vw, 38px) 0;
+}
+
+/* services list inside dark panel */
+.service-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.service-left {
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  color: rgba(236, 231, 222, 0.85);
+}
+
+.service-head {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(26px, 3vw, 44px);
+  margin-bottom: 10px;
+}
+
+.service-copy {
+  margin: 0 0 14px;
+  max-width: 70ch;
+  line-height: 1.8;
+  color: rgba(236, 231, 222, 0.70);
+}
+
+.service-lines {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.line-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.line-no {
+  opacity: 0.62;
+  letter-spacing: 0.12em;
+}
+
+.line-text {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: rgba(236, 231, 222, 0.86);
+}
+
+@media (max-width: 992px) {
+  .panel-top {
+    grid-template-columns: 1fr;
+  }
+  .panel-right {
+    grid-template-columns: 1fr;
+  }
+  .service-item {
+    grid-template-columns: 1fr;
+  }
+  .service-left {
+    font-size: 34px;
+  }
+}
+
+
+/* ---------- services: sticky stacking cards (reference-like) ---------- */
+.services-stack{
+  position: relative;
+  background: #0b0b0b;
+  color: #eee;
+  padding: 0;
+}
+
+.services-stack .service-card{
+  position: sticky;
+  top: var(--topbar-h);
+  height: calc(100vh - var(--topbar-h));
+  z-index: var(--z);
+  background: #0b0b0b; /* 불투명: 아래 카드/컨텐츠가 비치지 않게 */
+  display: flex;
+  align-items: center;
+}
+
+.services-stack .service-card-inner{
+  width: 100%;
+  padding-left: var(--edge);
+  padding-right: var(--edge);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 64px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.services-stack .service-no{
+  font-weight: 700;
+  font-size: clamp(38px, 3.8vw, 64px);
+  letter-spacing: -0.02em;
+  opacity: .92;
+}
+
+.services-stack .service-content{
+  max-width: 980px;
+}
+
+.services-stack .service-head{
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  font-size: clamp(42px, 5.2vw, 92px);
+  margin-bottom: 14px;
+}
+
+.services-stack .service-copy{
+  color: rgba(255,255,255,.78);
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.services-stack .service-lines{
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.services-stack .line-row{
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.services-stack .line-no{
+  color: rgba(255,255,255,.55);
+}
+
+.services-stack .line-text{
+  color: rgba(255,255,255,.92);
+}
+
+
+/* ===== services reference stack (sticky stage) ===== */
+/* force reference look (dark section regardless of body theme) */
+.services-ref{
+  background: #0b0b0b;
+  color: rgba(255,255,255,.92);
+}
+.services-ref .services-grid,
+.services-ref .services-intro{
+  padding-left: var(--edge);
+  padding-right: var(--edge);
+}
+
+
+/* right content aligns to same x as intro desc (services-intro-desc) */
+.services-ref .services-right{
+  display: grid;
+  grid-template-columns: 1fr 140px minmax(0, 1100px);
+  column-gap: 56px;
+  align-items: start;
+}
+
+/* titles and body start on the same column as the intro description */
+.services-ref .titles-stack,
+.services-ref .service-body{
+  grid-column: 3;
+}
+
+.services-ref .services-intro{
+  padding: 0 var(--edge);
+  margin-bottom: 0;
+}
+.services-ref .services-intro-top{
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding-top: 18px;
+}
+.services-ref .services-kicker{
+  font-size: clamp(64px, 9vw, 140px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: .92;
+  opacity: .95;
+}
+.services-ref .services-intro-main{
+  display: grid;
+  /* reference-like: big empty middle space, tag+desc live on the right */
+  grid-template-columns: 1fr 140px minmax(0, 915px);
+  column-gap: 56px;
+  padding-top: 34px;
+  align-items: start;
+}
+.services-ref .services-intro-tag{
+  grid-column: 2;
+  opacity: .7;
+  padding-top: 6px;
+}
+.services-ref .services-intro-desc{
+  grid-column: 3;
+  max-width: 720px;
+  margin: 0;
+  opacity: .82;
+  line-height: 1.55;
+  font-size: 18px;
+}
+
+.services-ref .services-scroller{
+  position: relative;
+}
+.services-ref .services-stage{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.services-ref .services-grid{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 72px; /* more breathing room between (01) and title */
+  row-gap: 0;
+  padding: 0 var(--edge);
+  align-items: start;
+}
+
+/* left index */
+.services-ref .idx-stack{
+  padding-top: 120px;
+}
+.services-ref .idx-item{
+  font-size: clamp(44px, 4.2vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+.services-ref .idx-item:first-child{
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+.services-ref .idx-item.is-on{
+  opacity: 1;
+}
+/* right: stacked titles + active body */
+.services-ref .titles-stack{
+  padding-top: 110px;
+}
+.services-ref .title-row{
+  position: relative;
+  padding: 18px 0 10px;
+}
+.services-ref .title-text{
+  font-size: clamp(44px, 4.8vw, 76px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.services-ref .title-rule{
+  margin-top: 18px;
+  height: 1px;
+  background: rgba(255,255,255,0.14);
+}
+
+.services-ref .service-body{
+  margin-top: 38px;
+  max-width: 720px;
+}
+.services-ref .service-sub{
+  font-size: 18px;
+  opacity: .85;
+  margin-bottom: 10px;
+}
+.services-ref .service-desc{
+  opacity: .78;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.services-ref .service-lines .line-row{
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+.services-ref .service-lines .line-row:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.services-ref .line-no{
+  opacity: .65;
+  font-variant-numeric: tabular-nums;
+}
+.services-ref .line-text{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* show only reached rows (prevents empty gaps) */
+.services-ref .idx-item,
+.services-ref .title-row{
+  display: none;
+}
+.services-ref .idx-item.is-on,
+.services-ref .title-row.is-on{
+  display: block;
+}
+
+/* responsive */
+@media (max-width: 920px){
+  .services-ref .services-intro-main{ grid-template-columns: 1fr; row-gap: 14px; }
+  .services-ref .services-intro-tag{ grid-column: 1; }
+  .services-ref .services-intro-desc{ grid-column: 1; max-width: 70ch; }
+  .services-ref .services-grid{ grid-template-columns: 140px 1fr; column-gap: 28px; }
+  .services-ref .idx-stack{ padding-top: 90px; }
+  .services-ref .titles-stack{ padding-top: 86px; }
+  .services-ref .service-body{ margin-top: 26px; }
+}
+
+/* ---------- hero -> services: sticky hero, real services covers it ---------- */
+.hs-scene{
+  --hs-p: 0;
+}
+
+.hs-hero-sticky{
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* fade hero as services comes up */
+.hs-hero-sticky .hero{
+  opacity: 1;
+  transform: none;
+}
+
+/* apply transition only after user starts scrolling */
+.hs-scene[data-hs-started="1"] .hs-hero-sticky .hero{
+  opacity: calc(1 - var(--hs-p));
+  transform: translateY(calc(var(--hs-p) * -12px)) scale(calc(1 - (var(--hs-p) * 0.02)));
+  transform-origin: center top;
+  will-change: transform, opacity;
+}
+
+/* when hero is basically gone, don't block interactions */
+.hs-scene[data-hs-done="1"] .hs-hero-sticky{
+  pointer-events: none;
+}
+
+/* ensure services paints above hero */
+.hs-services-flow{
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* make the cover feel immediate only after scrolling starts */
+.hs-scene[data-hs-started="1"] .hs-services-flow{
+  margin-top: clamp(-18vh, -220px, -10vh);
+  padding-top: clamp(18vh, 220px, 10vh);
+}
+
+/* =========================================================
+   Works (sticky counter)
+========================================================= */
+.works-ref{
+  background: #0b0b0a;
+  color: #f1f0ed;
+  padding: 84px 0 120px;
+}
+.works-ref .ref-heading h2{ color: #d8d7cf; }
+.works-ref .ref-eyebrow{ color: rgba(241,240,237,0.7); }
+.works-ref .ref-sub{ color: rgba(241,240,237,0.72); }
+
+.works-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  padding-top: 40px;
+}
+.works-counter{
+  position: sticky;
+  top: 12vh;
+  height: fit-content;
+  display: none;
+  align-items: flex-start;
+  gap: 0;
+  font-size: min(22vw, 220px);
+  line-height: .8;
+  color: rgba(241,240,237,0.62);
+  user-select: none;
+}
+.works-counter-zero{ position: relative; }
+.works-counter-digit{ position: relative; }
+.works-counter-digit-inner{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 1000ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.works-list{
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+.work-card{ scroll-margin-top: 18vh; }
+.work-card-inner{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.work-thumb{
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  background: rgba(241,240,237,0.10);
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+.work-meta-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  padding-top: 14px;
+}
+.work-subtitle{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  font-size: 13px;
+  opacity: .75;
+}
+.work-title{
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 34px);
+  color: #d8d7cf;
+}
+.work-tags{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.tag{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(241,240,237,0.5);
+  color: rgba(241,240,237,0.86);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tag-solid{
+  background: rgba(241,240,237,0.86);
+  color: #0b0b0a;
+  border-color: rgba(241,240,237,0.86);
+}
+
+
+
+/* works end divider */
+.works-ref{
+  position: relative;
+}
+.works-ref::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(241,240,237,0.14);
+}
+@media (min-width: 920px){
+  .works-grid{
+    grid-template-columns: 380px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .works-counter{ display: flex; }
+}
