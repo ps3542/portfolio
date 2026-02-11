@@ -6,8 +6,7 @@
   --topbar-h: 60px;
 
   /* zunedaalim.com 느낌: 거의 붙는 좌우 여백 */
- --edge: clamp(18px, 2.2vw, 36px);
-
+  --edge: clamp(18px, 2.2vw, 36px);
 
   /* 리듬 */
   --section-y: 88px;
@@ -42,12 +41,6 @@ body {
   background: rgba(0, 0, 0, 0.02);
 }
 
-
-
-
-
-
-
 /* ---------- global width: "거의 풀-블리드 + 얇은 안전 여백" ---------- */
 .container {
   width: 100%;
@@ -77,10 +70,11 @@ body {
   height: var(--topbar-h);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .hero-nav {
-  margin-left: auto;
+  margin-left: 0;
   display: flex;
   align-items: center;
   gap: 22px;
@@ -154,8 +148,6 @@ body {
   opacity: 0.75;
 }
 
-
-
 .hero-photo {
   margin-right: 140px;
   width: 100%;
@@ -163,10 +155,10 @@ body {
   aspect-ratio: 1 / 1;
   border-radius: 18px;
 
-  background-color: rgba(0, 0, 0, 0.08); /* ✅ 변경 */
-  background-size: cover;               /* ✅ 추가 */
-  background-position: center;          /* ✅ 추가 */
-  background-repeat: no-repeat;         /* ✅ 추가 */
+  background-color: rgba(0, 0, 0, 0.08);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   overflow: hidden;
 }
@@ -193,8 +185,6 @@ body {
 }
 
 /* ---------- reference-like section typography ---------- */
-
-
 .ref-heading {
   display: flex;
   align-items: baseline;
@@ -217,25 +207,10 @@ body {
   line-height: 1.7;
 }
 
-
-
 .ref-note {
   color: var(--muted);
   line-height: 1.7;
 }
-
-/* ---------- services: numbered rows + tool tags ---------- */
-
-
-
-
-
-
-
-
-
-
-
 
 /* ---------- works: list style ---------- */
 .works-grid {
@@ -273,7 +248,8 @@ body {
 }
 
 .work-card {
-  padding: 18px 300px;
+  /* ✅ 모바일에서 잘림 방지: 화면이 줄수록 자동으로 패딩이 줄어듦 */
+  padding: 18px clamp(16px, 10vw, 300px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -281,7 +257,6 @@ body {
   display: block;
   text-decoration: none;
   color: inherit;
-  /* 카드가 너무 커 보이면 여기 max-width로 "정사각형처럼" 작게 보이게 */
   max-width: clamp(560px, 48vw, 900px);
 }
 
@@ -386,8 +361,6 @@ body {
   margin-top: 18px;
 }
 
-
-
 .about-photo {
   width: 70%;
   aspect-ratio: 9 / 7;
@@ -422,8 +395,6 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-
-
 
 .footer-grid {
   display: grid;
@@ -484,12 +455,34 @@ body {
     --section-y: 72px;
   }
 
-  .hero-nav {
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  /* hero-top 안에 있는 Notion / GitHub만 숨김 */
+  .hero-top .hero-nav a[href*="github"],
+  .hero-top .hero-nav a[href*="notion"]{
+    display: none !important;
   }
 
+  .hero-top .hero-nav-divider{
+    display: none;
+  }
+
+
+  /* ✅ hero top: 무조건 한 줄 + 넘치면 가로 스크롤 */
+  .hero-nav{
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden; /* 가로 스크롤 금지 */
+  }
+
+  .hero-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* (있으면) service-row는 기존 유지 */
   .service-row {
     grid-template-columns: 72px 1fr;
   }
@@ -517,9 +510,7 @@ body {
     justify-content: flex-start;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
+  /* ❌ footer-grid 1컬럼으로 바꾸지 않음 (menu/social 한 행 유지) */
 }
 
 /* ---------- scroll reveal (subtle) ---------- */
@@ -543,12 +534,8 @@ body {
   }
 }
 
-
 /* ---------- reference-like dark panel (what i do) ---------- */
-
-
 /* services list inside dark panel */
-
 .service-lines {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -587,41 +574,38 @@ body {
   }
 }
 
-
 /* ---------- services: sticky stacking cards (reference-like) ---------- */
-
-.services-stack .service-lines{
-  border-top: 1px solid rgba(255,255,255,.16);
+.services-stack .service-lines {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.services-stack .line-row{
-  border-bottom: 1px solid rgba(255,255,255,.12);
+.services-stack .line-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.services-stack .line-no{
-  color: rgba(255,255,255,.55);
+.services-stack .line-no {
+  color: rgba(255, 255, 255, 0.55);
 }
 
-.services-stack .line-text{
-  color: rgba(255,255,255,.92);
+.services-stack .line-text {
+  color: rgba(255, 255, 255, 0.92);
 }
-
 
 /* ===== services reference stack (sticky stage) ===== */
 /* force reference look (dark section regardless of body theme) */
-.services-ref{
+.services-ref {
   background: #0b0b0b;
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, 0.92);
 }
+
 .services-ref .services-grid,
-.services-ref .services-intro{
+.services-ref .services-intro {
   padding-left: var(--edge);
   padding-right: var(--edge);
 }
 
-
 /* right content aligns to same x as intro desc (services-intro-desc) */
-.services-ref .services-right{
+.services-ref .services-right {
   display: grid;
   grid-template-columns: 1fr 140px minmax(0, 1100px);
   column-gap: 56px;
@@ -630,164 +614,192 @@ body {
 
 /* titles and body start on the same column as the intro description */
 .services-ref .titles-stack,
-.services-ref .service-body{
+.services-ref .service-body {
   grid-column: 3;
 }
 
-.services-ref .services-intro{
+.services-ref .services-intro {
   padding: 0 var(--edge);
   margin-bottom: 0;
 }
-.services-ref .services-intro-top{
-  border-top: 1px solid rgba(255,255,255,0.14);
+.services-ref .services-intro-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding-top: 18px;
 }
-.services-ref .services-kicker{
+.services-ref .services-kicker {
   font-size: clamp(64px, 9vw, 140px);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: .92;
-  opacity: .95;
+  line-height: 0.92;
+  opacity: 0.95;
 }
-.services-ref .services-intro-main{
+.services-ref .services-intro-main {
   display: grid;
-  /* reference-like: big empty middle space, tag+desc live on the right */
   grid-template-columns: 1fr 140px minmax(0, 915px);
   column-gap: 56px;
   padding-top: 34px;
   align-items: start;
 }
-.services-ref .services-intro-tag{
+.services-ref .services-intro-tag {
   grid-column: 2;
-  opacity: .7;
+  opacity: 0.7;
   padding-top: 6px;
 }
-.services-ref .services-intro-desc{
+.services-ref .services-intro-desc {
   grid-column: 3;
   max-width: 720px;
   margin: 0;
-  opacity: .82;
+  opacity: 0.82;
   line-height: 1.55;
   font-size: 18px;
 }
 
-.services-ref .services-scroller{
+.services-ref .services-scroller {
   position: relative;
 }
-.services-ref .services-stage{
+
+/* ✅ 모바일에서 sticky 계산 안 깨지게 svh 사용 */
+.services-ref .services-stage {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
   overflow: hidden;
 }
-.services-ref .services-grid{
+
+.services-ref .services-grid {
   height: 100%;
   display: grid;
   grid-template-columns: 220px 1fr;
-  column-gap: 72px; /* more breathing room between (01) and title */
+  column-gap: 72px;
   row-gap: 0;
   padding: 0 var(--edge);
   align-items: start;
 }
 
 /* left index */
-.services-ref .idx-stack{
+.services-ref .idx-stack {
   padding-top: 120px;
 }
-.services-ref .idx-item{
+.services-ref .idx-item {
   font-size: clamp(44px, 4.2vw, 72px);
   font-weight: 700;
   line-height: 1;
   padding: 22px 0;
-  border-top: 1px solid rgba(255,255,255,0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
-.services-ref .idx-item:first-child{
-  border-top: 1px solid rgba(255,255,255,0.14);
+.services-ref .idx-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
-.services-ref .idx-item.is-on{
+.services-ref .idx-item.is-on {
   opacity: 1;
 }
+
 /* right: stacked titles + active body */
-.services-ref .titles-stack{
+.services-ref .titles-stack {
   padding-top: 110px;
 }
-.services-ref .title-row{
+.services-ref .title-row {
   position: relative;
   padding: 18px 0 10px;
 }
-.services-ref .title-text{
+.services-ref .title-text {
   font-size: clamp(44px, 4.8vw, 76px);
   font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.02em;
 }
-.services-ref .title-rule{
+.services-ref .title-rule {
   margin-top: 18px;
   height: 1px;
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14);
 }
 
-.services-ref .service-body{
+.services-ref .service-body {
   margin-top: 38px;
   max-width: 720px;
 }
-.services-ref .service-sub{
+.services-ref .service-sub {
   font-size: 18px;
-  opacity: .85;
+  opacity: 0.85;
   margin-bottom: 10px;
 }
-.services-ref .service-desc{
-  opacity: .78;
+.services-ref .service-desc {
+  opacity: 0.78;
   line-height: 1.6;
   margin-bottom: 28px;
 }
 
-.services-ref .service-lines .line-row{
+.services-ref .service-lines .line-row {
   display: grid;
   grid-template-columns: 64px 1fr;
   align-items: center;
   padding: 14px 0;
-  border-top: 1px solid rgba(255,255,255,0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
-.services-ref .service-lines .line-row:last-child{
-  border-bottom: 1px solid rgba(255,255,255,0.14);
+.services-ref .service-lines .line-row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
-.services-ref .line-no{
-  opacity: .65;
+.services-ref .line-no {
+  opacity: 0.65;
   font-variant-numeric: tabular-nums;
 }
-.services-ref .line-text{
+.services-ref .line-text {
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 /* show only reached rows (prevents empty gaps) */
 .services-ref .idx-item,
-.services-ref .title-row{
+.services-ref .title-row {
   display: none;
 }
 .services-ref .idx-item.is-on,
-.services-ref .title-row.is-on{
+.services-ref .title-row.is-on {
   display: block;
 }
 
-/* responsive */
-@media (max-width: 920px){
-  .services-ref .services-intro-main{ grid-template-columns: 1fr; row-gap: 14px; }
-  .services-ref .services-intro-tag{ grid-column: 1; }
-  .services-ref .services-intro-desc{ grid-column: 1; max-width: 70ch; }
-  .services-ref .services-grid{ grid-template-columns: 140px 1fr; column-gap: 28px; }
-  .services-ref .idx-stack{ padding-top: 90px; }
-  .services-ref .titles-stack{ padding-top: 86px; }
-  .services-ref .service-body{ margin-top: 26px; }
+/* responsive (⚠️ services-right/grid-column은 건드리지 않음) */
+@media (max-width: 920px) {
+  /* ✅ 모바일에서 services-right 3컬럼은 유지하되 폭을 줄여 화면 밖으로 안 나가게 */
+  .services-ref .services-right {
+    grid-template-columns: 1fr 80px minmax(0, 1fr);
+    column-gap: 22px;
+  }
+
+  .services-ref .services-intro-main {
+    grid-template-columns: 1fr 80px minmax(0, 1fr);
+    column-gap: 22px;
+    row-gap: 12px;
+  }
+
+  .services-ref .services-intro-desc {
+    max-width: 70ch;
+    font-size: 16px;
+  }
+
+  .services-ref .services-grid {
+    grid-template-columns: 140px 1fr;
+    column-gap: 28px;
+  }
+
+  .services-ref .idx-stack {
+    padding-top: 90px;
+  }
+  .services-ref .titles-stack {
+    padding-top: 86px;
+  }
+  .services-ref .service-body {
+    margin-top: 26px;
+  }
 }
 
 /* ---------- hero -> services: sticky hero, real services covers it ---------- */
-.hs-scene{
+.hs-scene {
   --hs-p: 0;
 }
 
-.hs-hero-sticky{
+.hs-hero-sticky {
   position: sticky;
   top: var(--topbar-h);
   z-index: 1;
@@ -795,26 +807,27 @@ body {
 }
 
 /* fade hero as services comes up */
-.hs-hero-sticky .hero{
+.hs-hero-sticky .hero {
   opacity: 1;
   transform: none;
 }
 
 /* apply transition only after user starts scrolling */
-.hs-scene[data-hs-started="1"] .hs-hero-sticky .hero{
+.hs-scene[data-hs-started="1"] .hs-hero-sticky .hero {
   opacity: calc(1 - var(--hs-p));
-  transform: translateY(calc(var(--hs-p) * -12px)) scale(calc(1 - (var(--hs-p) * 0.02)));
+  transform: translateY(calc(var(--hs-p) * -12px))
+    scale(calc(1 - (var(--hs-p) * 0.02)));
   transform-origin: center top;
   will-change: transform, opacity;
 }
 
 /* when hero is basically gone, don't block interactions */
-.hs-scene[data-hs-done="1"] .hs-hero-sticky{
+.hs-scene[data-hs-done="1"] .hs-hero-sticky {
   pointer-events: none;
 }
 
 /* ensure services paints above hero */
-.hs-services-flow{
+.hs-services-flow {
   position: relative;
   z-index: 2;
   margin-top: 0;
@@ -822,7 +835,7 @@ body {
 }
 
 /* make the cover feel immediate only after scrolling starts */
-.hs-scene[data-hs-started="1"] .hs-services-flow{
+.hs-scene[data-hs-started="1"] .hs-services-flow {
   margin-top: clamp(-18vh, -220px, -10vh);
   padding-top: clamp(18vh, 220px, 10vh);
 }
@@ -830,22 +843,28 @@ body {
 /* =========================================================
    Works (sticky counter)
 ========================================================= */
-.works-ref{
+.works-ref {
   background: #0b0b0a;
   color: #f1f0ed;
   padding: 84px 0 120px;
 }
-.works-ref .ref-heading h2{ color: #d8d7cf; }
-.works-ref .ref-eyebrow{ color: rgba(241,240,237,0.7); }
-.works-ref .ref-sub{ color: rgba(241,240,237,0.72); }
+.works-ref .ref-heading h2 {
+  color: #d8d7cf;
+}
+.works-ref .ref-eyebrow {
+  color: rgba(241, 240, 237, 0.7);
+}
+.works-ref .ref-sub {
+  color: rgba(241, 240, 237, 0.72);
+}
 
-.works-grid{
+.works-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 26px;
   padding-top: 40px;
 }
-.works-counter{
+.works-counter {
   position: sticky;
   top: 12vh;
   height: fit-content;
@@ -853,105 +872,111 @@ body {
   align-items: flex-start;
   gap: 0;
   font-size: min(22vw, 220px);
-  line-height: .8;
-  color: rgba(241,240,237,0.62);
+  line-height: 0.8;
+  color: rgba(241, 240, 237, 0.62);
   user-select: none;
 }
-.works-counter-zero{ position: relative; }
-.works-counter-digit{ position: relative; }
+.works-counter-zero {
+  position: relative;
+}
+.works-counter-digit {
+  position: relative;
+}
 
-
-.works-list{
+.works-list {
   display: flex;
   flex-direction: column;
   gap: 34px;
 }
-.work-card{ scroll-margin-top: 18vh; }
-.work-card-inner{
+.work-card {
+  scroll-margin-top: 18vh;
+}
+.work-card-inner {
   display: block;
   text-decoration: none;
   color: inherit;
 }
-.work-thumb{
+.work-thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
   border-radius: 16px;
-  background: rgba(241,240,237,0.10);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(241, 240, 237, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
-.work-meta-row{
+.work-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 18px;
   padding-top: 14px;
 }
-.work-subtitle{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.work-subtitle {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   text-transform: uppercase;
   font-size: 13px;
-  opacity: .75;
+  opacity: 0.75;
 }
-.work-title{
+.work-title {
   font-weight: 800;
   font-size: clamp(18px, 2.2vw, 34px);
   color: #d8d7cf;
 }
-.work-tags{
+.work-tags {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-.tag{
+.tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 34px;
   padding: 0 14px;
   border-radius: 999px;
-  border: 1px solid rgba(241,240,237,0.5);
-  color: rgba(241,240,237,0.86);
+  border: 1px solid rgba(241, 240, 237, 0.5);
+  color: rgba(241, 240, 237, 0.86);
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.tag-solid{
-  background: rgba(241,240,237,0.86);
+.tag-solid {
+  background: rgba(241, 240, 237, 0.86);
   color: #0b0b0a;
-  border-color: rgba(241,240,237,0.86);
+  border-color: rgba(241, 240, 237, 0.86);
 }
-
-
 
 /* works end divider */
-.works-ref{
+.works-ref {
   position: relative;
 }
-.works-ref::after{
+.works-ref::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 1px;
-  background: rgba(241,240,237,0.14);
+  background: rgba(241, 240, 237, 0.14);
 }
-@media (min-width: 920px){
-  .works-grid{
+@media (min-width: 920px) {
+  .works-grid {
     grid-template-columns: 380px 1fr;
     gap: 56px;
     align-items: start;
   }
-  .works-counter{ display: flex; }
+  .works-counter {
+    display: flex;
+  }
 }
 
 /* ABOUT 텍스트 영역 */
 .about-text {
-  max-width: 640px;   /* ← 줄 길이 제한 (중요) */
+  max-width: 640px;
 }
 
 /* 선언문 */
@@ -975,15 +1000,15 @@ body {
 .about-body p + p {
   margin-top: 22px;
 }
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
   .about-text {
     max-width: 100%;
   }
 
   .about-kicker {
-    font-size: 22px;        /* 40px → 22px */
-    margin-bottom: 32px;    /* 80px → 32px */
+    font-size: 22px;
+    margin-bottom: 32px;
     letter-spacing: 0.04em;
   }
 
@@ -1001,14 +1026,172 @@ body {
 @media (max-width: 768px) {
   #about .about-photo {
     width: 100%;
-    aspect-ratio: 16 / 10;   /* 더 넓게 */
-    min-height: 240px;       /* 작아지지 않게 하한 */
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
     border-radius: 24px;
   }
 
-  /* 사진과 텍스트 사이 여백 조금 */
   #about .col-lg-6:first-child {
     margin-bottom: 18px;
   }
 }
 
+/* =========================
+   ✅ 모바일 최종 정리(필수만)
+   - 화면 잘림/안나옴 방지
+   - hero top 한 줄
+   - services 유지
+   - footer menu/social 같은 줄
+========================= */
+@media (max-width: 576px) {
+  /* 가로 잘림/안보임 방지 (모바일에서만) */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* hero title 줄바꿈 허용(모바일에서만) */
+  .hero-title {
+    white-space: normal;
+  }
+
+  /* hero photo가 가로를 밀어내는 문제 제거 */
+  .hero-photo {
+    margin-right: 0;
+    max-width: 320px;
+  }
+
+  /* contact 폼 입력 모바일에서 70% 제한 해제 */
+  .form-min input,
+  .form-min textarea,
+  .form-min .form-actions {
+    max-width: 100% !important;
+  }
+
+  /* footer는 끝까지 2컬럼 유지(요구사항) */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+
+/* =========================
+   services-ref mobile (<=576) - 단일 블록(충돌 금지)
+   목적:
+   - PC 레이아웃 규칙 완전 무력화(오른쪽 밀림 제거)
+   - 모바일은 m-row(번호+타이틀) 누적 쌓임 유지
+========================= */
+@media (max-width: 576px){
+
+  /* intro: 1열 */
+  .services-ref .services-intro-main{
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 14px !important;
+  }
+  .services-ref .services-intro-tag{
+    grid-column: 1 !important;
+    padding-top: 0 !important;
+  }
+  .services-ref .services-intro-desc{
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ✅ PC용 services-right(3컬럼/그리드) 무조건 제거 */
+  .services-ref .services-right{
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* ✅ stage 유지 */
+  .services-ref .services-stage{
+    height: 100svh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* ✅ 모바일은 1열만 사용 */
+  .services-ref .services-grid{
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    align-items: start !important;
+  }
+
+  /* ✅ PC용 left 숫자 스택 숨김 */
+  .services-ref .services-left,
+  .services-ref .idx-stack{
+    display: none !important;
+  }
+
+  /* ✅ PC용 title-row/idx-item는 모바일에서 안 씀 */
+  .services-ref .idx-item,
+  .services-ref .title-row{
+    display: none !important;
+  }
+
+  /* ✅ 모바일 누적 스택: m-row만 사용 */
+  .services-ref .titles-stack{
+    margin-top: 26px !important; /* 성철님 감각 유지 */
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .services-ref .m-row{
+    display: none !important;
+  }
+  .services-ref .m-row.is-on{
+    display: grid !important;            /* ✅ is-on 누적이면 계속 보임 */
+    grid-template-columns: 80px 1fr;
+    column-gap: 18px;                    /* 40이면 모바일에서 너무 밀립니다 */
+    align-items: start;
+    padding: 14px 0 10px;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .services-ref .m-idx{
+    font-weight: 900;
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .services-ref .title-text{
+    font-size: clamp(28px, 8.2vw, 44px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    word-break: keep-all;
+  }
+
+  .services-ref .title-rule{
+    margin-top: 10px !important;
+  }
+
+  /* 본문 */
+  .services-ref .service-body{
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  .services-ref .service-sub{
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+  }
+  .services-ref .service-desc{
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 18px !important;
+  }
+  .services-ref .service-lines .line-row{
+    grid-template-columns: 46px 1fr !important;
+    padding: 10px 0 !important;
+  }
+}
