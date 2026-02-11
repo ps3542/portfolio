@@ -42,21 +42,11 @@ body {
   background: rgba(0, 0, 0, 0.02);
 }
 
-.section-head {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
-.section-title {
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
 
-.muted {
-  color: var(--muted);
-}
+
+
+
 
 /* ---------- global width: "거의 풀-블리드 + 얇은 안전 여백" ---------- */
 .container {
@@ -164,11 +154,7 @@ body {
   opacity: 0.75;
 }
 
-.hero-cta {
-  border-radius: 999px;
-  padding: 12px 18px;
-  border-width: 2px;
-}
+
 
 .hero-photo {
   margin-right: 140px;
@@ -207,12 +193,7 @@ body {
 }
 
 /* ---------- reference-like section typography ---------- */
-.ref-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 12px;
-  opacity: 0.72;
-}
+
 
 .ref-heading {
   display: flex;
@@ -236,9 +217,7 @@ body {
   line-height: 1.7;
 }
 
-.hr-line {
-  border-top: 1px solid var(--line);
-}
+
 
 .ref-note {
   color: var(--muted);
@@ -246,43 +225,17 @@ body {
 }
 
 /* ---------- services: numbered rows + tool tags ---------- */
-.service-list {
-  border-top: 1px solid var(--line);
-}
 
-.service-row {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 22px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
-}
 
-.service-no {
-  font-weight: 800;
-  opacity: 0.75;
-  letter-spacing: 0.12em;
-}
 
-.service-title {
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-}
 
-.service-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 14px;
-  color: rgba(0, 0, 0, 0.72);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-}
 
-.service-tag {
-  white-space: nowrap;
-}
+
+
+
+
+
+
 
 /* ---------- works: list style ---------- */
 .works-grid {
@@ -433,15 +386,11 @@ body {
   margin-top: 18px;
 }
 
-.about-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
+
 
 .about-photo {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: 70%;
+  aspect-ratio: 9 / 7;
   border-radius: 18px;
   background: rgba(0, 0, 0, 0.08);
 }
@@ -465,7 +414,16 @@ body {
   border-radius: 14px !important;
   border-color: rgba(0, 0, 0, 0.14) !important;
   background: rgba(255, 255, 255, 0.35) !important;
+  max-width: 70% !important;
 }
+
+.form-min .form-actions {
+  max-width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 
 .footer-grid {
   display: grid;
@@ -587,96 +545,9 @@ body {
 
 
 /* ---------- reference-like dark panel (what i do) ---------- */
-.panel {
-  border-radius: 28px;
-  overflow: hidden;
-}
 
-.panel-dark {
-  background: radial-gradient(1200px 500px at 30% 0%, rgba(255,255,255,0.06), transparent 55%),
-              linear-gradient(180deg, #0b0b0b, #060606);
-  color: rgba(236, 231, 222, 0.92);
-  padding: clamp(26px, 4vw, 56px);
-}
-
-.panel-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  align-items: end;
-}
-
-.panel-title-big {
-  margin: 0;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  font-size: clamp(64px, 7vw, 150px);
-  line-height: 0.92;
-  color: rgba(236, 231, 222, 0.88);
-}
-
-.panel-right {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 22px;
-  align-items: start;
-}
-
-.panel-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 12px;
-  opacity: 0.65;
-  padding-top: 6px;
-}
-
-.panel-desc {
-  margin: 0;
-  max-width: 56ch;
-  line-height: 1.8;
-  color: rgba(236, 231, 222, 0.72);
-}
-
-.panel-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.12);
-  margin: clamp(22px, 3vw, 38px) 0;
-}
 
 /* services list inside dark panel */
-.service-dark {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.service-item {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 22px;
-  padding: 26px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.service-left {
-  font-weight: 900;
-  font-size: 40px;
-  letter-spacing: -0.02em;
-  color: rgba(236, 231, 222, 0.85);
-}
-
-.service-head {
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  font-size: clamp(26px, 3vw, 44px);
-  margin-bottom: 10px;
-}
-
-.service-copy {
-  margin: 0 0 14px;
-  max-width: 70ch;
-  line-height: 1.8;
-  color: rgba(236, 231, 222, 0.70);
-}
 
 .service-lines {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -718,60 +589,6 @@ body {
 
 
 /* ---------- services: sticky stacking cards (reference-like) ---------- */
-.services-stack{
-  position: relative;
-  background: #0b0b0b;
-  color: #eee;
-  padding: 0;
-}
-
-.services-stack .service-card{
-  position: sticky;
-  top: var(--topbar-h);
-  height: calc(100vh - var(--topbar-h));
-  z-index: var(--z);
-  background: #0b0b0b; /* 불투명: 아래 카드/컨텐츠가 비치지 않게 */
-  display: flex;
-  align-items: center;
-}
-
-.services-stack .service-card-inner{
-  width: 100%;
-  padding-left: var(--edge);
-  padding-right: var(--edge);
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  column-gap: 64px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.services-stack .service-no{
-  font-weight: 700;
-  font-size: clamp(38px, 3.8vw, 64px);
-  letter-spacing: -0.02em;
-  opacity: .92;
-}
-
-.services-stack .service-content{
-  max-width: 980px;
-}
-
-.services-stack .service-head{
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
-  font-size: clamp(42px, 5.2vw, 92px);
-  margin-bottom: 14px;
-}
-
-.services-stack .service-copy{
-  color: rgba(255,255,255,.78);
-  max-width: 640px;
-  margin-bottom: 28px;
-}
 
 .services-stack .service-lines{
   border-top: 1px solid rgba(255,255,255,.16);
@@ -1042,15 +859,7 @@ body {
 }
 .works-counter-zero{ position: relative; }
 .works-counter-digit{ position: relative; }
-.works-counter-digit-inner{
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  transition: transform 1000ms cubic-bezier(.2,.8,.2,1);
-  will-change: transform;
-}
+
 
 .works-list{
   display: flex;
@@ -1139,3 +948,67 @@ body {
   }
   .works-counter{ display: flex; }
 }
+
+/* ABOUT 텍스트 영역 */
+.about-text {
+  max-width: 640px;   /* ← 줄 길이 제한 (중요) */
+}
+
+/* 선언문 */
+.about-kicker {
+  font-size: 40px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 80px;
+}
+
+/* 본문 영역 */
+.about-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 0.82);
+  margin: 0;
+}
+
+/* 문단 간 여백 */
+.about-body p + p {
+  margin-top: 22px;
+}
+@media (max-width: 768px) {
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-kicker {
+    font-size: 22px;        /* 40px → 22px */
+    margin-bottom: 32px;    /* 80px → 32px */
+    letter-spacing: 0.04em;
+  }
+
+  .about-body p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-body p + p {
+    margin-top: 18px;
+  }
+}
+
+/* mobile: about photo bigger */
+@media (max-width: 768px) {
+  #about .about-photo {
+    width: 100%;
+    aspect-ratio: 16 / 10;   /* 더 넓게 */
+    min-height: 240px;       /* 작아지지 않게 하한 */
+    border-radius: 24px;
+  }
+
+  /* 사진과 텍스트 사이 여백 조금 */
+  #about .col-lg-6:first-child {
+    margin-bottom: 18px;
+  }
+}
+

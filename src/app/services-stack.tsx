@@ -63,7 +63,10 @@ export default function ServicesStack() {
         <div className="services-intro-main">
           <div className="services-intro-tag">(services)</div>
           <p className="services-intro-desc">
-            기획 → 개발 → 배포까지 end-to-end로 책임지고, 사용자 경험(ux)과 운영 안정성까지 함께 챙깁니다. 빠르게 만들되, 오래 가는 구조로 정리합니다.
+            기획 → 개발 → 배포까지 책임지고, 사용자 경험(UX)과 운영 안정성까지 함께 챙깁니다.
+          </p>
+          <p className="services-intro-desc">
+            빠르게 만들되, 오래 가는 구조로 정리합니다.
           </p>
         </div>
       </div>

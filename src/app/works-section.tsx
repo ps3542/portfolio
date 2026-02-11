@@ -52,8 +52,8 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
       <div className="container">
         <div className="ref-heading">
           <div>
-            <h2>selected works /</h2>
-            <div className="ref-eyebrow">(projects)</div>
+            <h2>selected projects /</h2>
+            
           </div>        
         </div>
 

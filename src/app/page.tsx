@@ -12,43 +12,43 @@ type WorkItem = {
 
 const socials: LinkItem[] = [
   { label: "Notion", href: "https://www.notion.so/ps3542/" },
-  { label: "Github", href: "https://github.com/ps3542/portfolio" },
+  { label: "Github", href: "https://github.com/ps3542" },
 ];
 
 const selectedWorks: WorkItem[] = [
   { title: "project one", subtitle: "development", year: "2026", href: "#" },
   { title: "project two", subtitle: "development", year: "2026", href: "#" },
   { title: "project three", subtitle: "development", year: "2026", href: "#" },
-  { title: "project four", subtitle: "development", year: "2026", href: "#" },
-  { title: "project five", subtitle: "development", year: "2026", href: "#" },
+  { title: "PlaceEat", subtitle: "Profile Part", year: "2026", href: "#" },
+  { title: "Catch-A-Bite", subtitle: "Owner Part", year: "2026", href: "#" },
 ];
 
 const skillGroups: { title: string; items: string[] }[] = [
   {
     title: "languages & tools",
     items: [
-      "python",
+      "html",
+      "css",   
       "sql",
+      "mysql, mariadb",
       "java",
-      "typescript",
       "javascript",
+      "typescript",
+      "python",
       "git",
-      "postman",
+      "linux",     
       "docker",
-      "firebase",
     ],
   },
   {
     title: "frameworks & libraries",
     items: [
+      "spring boot",     
+      "spring data jpa",   
+      "rest api",
       "react",
       "next.js",
-      "spring boot",
-      "express.js",
-      "bootstrap",
-      "tailwindcss",
-      "framer motion",
-      "gsap",
+      "bootstrap",        
     ],
   },
   {
@@ -80,7 +80,7 @@ export default function Page() {
               <span className="hero-nav-divider" />
 
               <a
-                href="https://github.com/ps3542/portfolio"
+                href="https://github.com/ps3542"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-nav-ext"
@@ -193,14 +193,29 @@ export default function Page() {
               <div className="col-lg-6">
                 <div className="about-photo" />
               </div>
-              <div className="col-lg-6">
-                <p className="ref-note mb-3">
-                
+            <div className="col-lg-6 about-text">
+              <p className="about-kicker">
+                Building with intention
+              </p>
+
+              <div className="about-body">
+                <p>
+                  웹 서비스의 동작 방식에 대한 호기심에서 개발을 시작했습니다.
+                  기능을 구현하는 단계에서 나아가 현재는 설계와 흐름을 먼저 생각합니다.
                 </p>
-                <p className="ref-note mb-0">
-                 
+
+                <p>
+                  JSP 기반 MVC 구조의 프로젝트에서 계층형 아키텍처와 역할 분리 설계를 경험했고,
+                  Spring Boot와 React를 기반으로 REST API 중심의 풀스택 웹 애플리케이션을 구현했습니다.
+                  이를 통해 서비스가 구조 위에서 어떻게 연결되고 작동하는지 이해하게 되었습니다.
+                </p>
+
+                <p>
+                  맡은 역할에 책임을 다하고, 끝까지 완성하는 개발자가 되고 싶습니다.
+                  사용자와 운영자의 입장을 함께 고민하며, 실제로 쓰이는 서비스를 만드는 것을 목표로 합니다.
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -211,7 +226,7 @@ export default function Page() {
         <div className="container">
           <div className="ref-note">let&apos;s make it happen</div>
           <div className="d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 mt-2">
-            <h2 className="contact-title">say hello</h2>
+            <h2 className="contact-title">Say Hello</h2>
             <div className="ref-note"></div>
           </div>
 
@@ -220,25 +235,22 @@ export default function Page() {
               <div className="col-lg-7">
                 <form className="form-min">
                   <div className="row g-3">
-                    <div className="col-md-6">
-                      <input className="form-control" placeholder="name" />
-                    </div>
-                    <div className="col-md-6">
-                      <input className="form-control" placeholder="email" />
-                    </div>
                     <div className="col-12">
-                      <input className="form-control" placeholder="subject" />
+                      <input className="form-control" placeholder="Name" />
+                    </div>                  
+                    <div className="col-12">
+                      <input className="form-control" placeholder="Email" />
                     </div>
                     <div className="col-12">
                       <textarea
                         className="form-control"
-                        placeholder="message"
+                        placeholder="Message"
                         rows={6}
                       />
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 form-actions">
                       <button type="button" className="btn btn-dark px-4 py-2">
-                        send message
+                        Send Message
                       </button>
                     </div>
                   </div>
