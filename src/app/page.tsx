@@ -120,7 +120,7 @@ export default function Page() {
 
             <div className="col-lg-5 d-flex justify-content-center">
               <div className="hero-photo" 
-               style={{ backgroundImage: "url('/heroimage.png')" }}
+               style={{ backgroundImage: "url('heroimage.png')" }}
                />
             </div>
 
