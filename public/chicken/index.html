@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- slick slider -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <title>오븐에 빠진 닭</title>
+  <link rel="icon" href="img/favicono.ico">
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerPadding: '40px',
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+   <!-- 배경동영상 -->
+  <figure class="vid">
+    <video loop autoplay muted>
+      <source src="img/chi2.mp4" type="video/mp4">
+    </video>
+  </figure>
+
+  <!-- Header + nav -->
+  <header>
+    <div class="logo">
+      <a href="#"><img src="img/logo.png" alt="로고"></a>
+    </div>
+    <ul id="nav">
+      <li><a href="#">메뉴</a>
+        <ul>
+          <li><a href="#">신메뉴</a></li>
+          <li><a href="#">요리치킨</a></li>
+          <li><a href="#">치킨(베이크)</a></li>
+          <li><a href="#">치킨(로스트)</a></li>
+        </ul>
+      </li>
+      <li><a href="#">이벤트</a>
+        <ul>
+          <li><a href="#">진행중인 이벤트</a></li>
+          <li><a href="#">지난 이벤트</a></li>
+          <li><a href="#">당첨자 발표</a></li>
+        </ul>
+      </li>
+      <li><a href="#">매장안내</a>
+        <ul>
+          <li><a href="#">매장안내</a></li>
+        </ul>
+      </li>
+      <li><a href="#">오빠닭 STORY</a>
+        <ul>
+          <li><a href="#">브랜드 소개</a></li>
+          <li><a href="#">창업안내</a></li>
+          <li><a href="#">1:1 문의하기</a></li>
+          <li><a href="#">뉴스</a></li>
+        </ul>
+      </li>
+      <div style="display: flex;">
+      <li><button type="button" class="id">로그인</button></li>
+      <li><button type="button" class="id">회원가입</button></li>
+      </div>
+    </ul>
+  </header>
+  <!-- /header + nav -->
+  <!-- main ---------------------------------------------------------------------------------------------------->
+  <section>
+    <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img class="slider-pc" src="img/oben1-1.png" alt="new coca cola">
+        <img class="slider-m" src="img/oben1-2.png" alt="new coca cola">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/oben2-1.png" alt="신흥시장">
+        <img class="slider-m" src="img/oben2-2.png" alt="신흥시장">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/oben3-1.png" alt="나의 미식 파트너">
+        <img class="slider-m" src="img/oben3-2.png" alt="나의 미식 파트너">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/oben4-1.png" alt="토레타X윈터">
+        <img class="slider-m" src="img/oben4-2.png" alt="토레타X윈터">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/oben5-1.png" alt="스프라이트X카리나">
+        <img class="slider-m" src="img/oben5-2.png" alt="스프라이트X카리나">
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- /main -->
+
+  <div class="inquiry-box">
+   <div class="inquiry-title">빠른 창업 문의</div>
+     <div class="form-group">
+      <label>창업형태 선택</label>
+      <input type="radio" name="type" id="new" checked>
+      <label for="new">신규창업</label>
+      <input type="radio" name="type" id="change">
+      <label for="change">업종변경</label>
+      
+      <input type="text" placeholder="이름">
+      <input type="text" placeholder="연락처">
+      
+      <select>
+        <option>희망지역</option>
+        <option>서울</option>
+        <option>경기</option>
+      </select>
+      <select>
+        <option>시/군/구</option>
+        <option>강남구</option>
+        <option>서초구</option>
+      </select>
+      
+      <div class="agree">
+        <input type="checkbox" id="agree">
+        <label for="agree">개인정보수집약관에 동의합니다.</label>
+      </div>
+      
+      <button class="submit-btn">신청하기</button>
+    </div>
+    
+    <div class="close-btn">X</div>
+  </div>
+  <!-- 모바일에서만 보이는 화면 -->
+  <div class="event">
+    <h3>EVENT</h3>
+    <div>
+    <p>오빠닭의 다양한 이벤트에 참여해보세요!</p>
+    <a href="#">자세히 보기+</a>
+    </div>
+  </div>
+  <div class="search">
+    <h3>우리동네  
+    <span>오빠닭 찾기</span>
+    </h3>
+    <p>우리동네에서 가장 가까운
+      <br>
+      오빠닭을 찾아보세요!!
+    </p>
+    <div class="store">
+      <img src="img/store.png" alt="store">
+    </div>
+    <div>
+      <form method="get" action="/store/store/php">
+        <fieldset class="set">
+          <input type="text" name="search_name" id="search_name" placeholder="매장찾기">
+          <button type="button" class="search_btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- 모바일에서만 보이는 화면 -->
+
+</body>
+</html>

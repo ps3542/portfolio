@@ -1,6 +1,8 @@
 // src/app/page.tsx
 import ServicesStack from './services-stack';
 import HeroServicesScene from './hero-services-scene.client';
+import ContactForm from './contact-form.client';
+
 type LinkItem = { label: string; href: string; icon?: string };
 
 type WorkItem = {
@@ -8,6 +10,7 @@ type WorkItem = {
   subtitle: string;
   year: string;
   href?: string;
+  video?: string;
 };
 
 const socials: LinkItem[] = [
@@ -16,11 +19,11 @@ const socials: LinkItem[] = [
 ];
 
 const selectedWorks: WorkItem[] = [
-  { title: "project one", subtitle: "development", year: "2026", href: "#" },
-  { title: "project two", subtitle: "development", year: "2026", href: "#" },
-  { title: "project three", subtitle: "development", year: "2026", href: "#" },
-  { title: "PlaceEat", subtitle: "Profile Part", year: "2026", href: "#" },
-  { title: "Catch-A-Bite", subtitle: "Owner Part", year: "2026", href: "#" },
+  { title: "Nike", subtitle: "Toy project 1", year: "2026", href: "nike/index.html", video: "https://youtu.be/dYULOu4CQo0" },
+  { title: "Chicken", subtitle: "Toy project 2", year: "2026", href: "chicken/index.html", video: "https://youtu.be/dJgLsoM17vE" },
+  { title: "CocaCola", subtitle: "Toy project 3", year: "2026", href: "cocacola/index.html", video: "https://youtu.be/XZJH1Yw_htE" },
+  { title: "PlaceEat", subtitle: "Mini Project", year: "2026", href: "https://github.com/ps3542/PlaceEat", video: "https://youtu.be/eF7QDWeVRpc" },
+  { title: "Catch-A-Bite", subtitle: "Final Project", year: "2026", href: "https://github.com/ps3542/catch-a-bite", video: "https://youtu.be/m_gjlqqHYG8" },
 ];
 
 const skillGroups: { title: string; items: string[] }[] = [
@@ -64,6 +67,7 @@ import LocalTime from './local-time';
 export default function Page() {
   return (
     <>
+    <div id="top" aria-hidden="true" />
       <ScrollReveal />
       {/* hero top */}
       <div className="hero-top">
@@ -104,7 +108,7 @@ export default function Page() {
       
       <HeroServicesScene
         hero={(
-<header id="top" className="hero">
+<header className="hero">
         <div className="hero-inner">
           <h1 className="hero-title hero-title-center">For People Who Need Things Done</h1>
 
@@ -191,8 +195,16 @@ export default function Page() {
           <div data-reveal className="about-wrap">
             <div className="row g-4 align-items-start">
               <div className="col-lg-6">
-                <div className="about-photo" />
-              </div>
+                <div className="about-photo">
+                  <iframe
+                    src="https://www.youtube.com/embed/LZYojOWzfFM"
+                    title="About video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen                   
+                  />
+                </div>
+              </div>             
             <div className="col-lg-6 about-text">
               <p className="about-kicker">
                 Building with intention
@@ -233,28 +245,7 @@ export default function Page() {
           <div data-reveal className="contact-wrap">
             <div className="row g-4">
               <div className="col-lg-7">
-                <form className="form-min">
-                  <div className="row g-3">
-                    <div className="col-12">
-                      <input className="form-control" placeholder="Name" />
-                    </div>                  
-                    <div className="col-12">
-                      <input className="form-control" placeholder="Email" />
-                    </div>
-                    <div className="col-12">
-                      <textarea
-                        className="form-control"
-                        placeholder="Message"
-                        rows={6}
-                      />
-                    </div>
-                    <div className="col-12 form-actions">
-                      <button type="button" className="btn btn-dark px-4 py-2">
-                        Send Message
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                <ContactForm />
               </div>
 
               <div className="col-lg-5">

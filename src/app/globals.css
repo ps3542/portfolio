@@ -363,9 +363,16 @@ body {
 
 .about-photo {
   width: 70%;
-  aspect-ratio: 9 / 7;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.08);
+  aspect-ratio: 8/6;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-photo video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* ---------- contact/footer ---------- */
@@ -1194,4 +1201,16 @@ body {
     grid-template-columns: 46px 1fr !important;
     padding: 10px 0 !important;
   }
+}
+
+.work-thumb {
+  aspect-ratio: 16 / 9;   /* ✅ 통일 */
+  overflow: hidden;
+}
+
+.work-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* ✅ 이제 안 잘림/여백 없음 */
+  display: block;
 }

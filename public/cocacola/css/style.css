@@ -1,0 +1,622 @@
+    *{margin: 0; padding: 0;}
+    
+    body{background-color: #eeeeee !important;}
+    .container{
+      padding: 3%;
+    }
+    .btn1 .btn{
+      width: 350px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+    ul, li, h6 {
+      list-style: none;
+      color: white;
+    }
+    h6{
+      font-size: 12px;
+      font-weight: lighter;
+    }
+    .left{
+      font-weight: bold;
+      padding: 0;
+    }
+    .left li{
+      padding-top: 9px;
+      font-size: 14px;
+    }
+    
+    .navbar{
+      display: inline-block;
+      background-color: white;
+      height: 80px !important;
+      line-height: 30px !important;
+  
+    }
+    .navbar .container{
+      position: relative;
+      left: 15%;
+    
+     
+    }
+   
+    #collapsibleNavbar-m{opacity: 0;}
+
+
+    /* 호버가 제대로 동작되게 하려면 부모쪽에서 동작이되게 */
+    #collapsibleNavbar .nav-item:hover .dropdown-menu{
+      display: block;
+      margin-top: 30px;
+      border: 1px solid white;
+      border-radius: 0 !important;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 20px      
+    }
+    .nav-item .nav-link{
+      color: black;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-item .nav-link::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -20px;          /* 글자 박스 맨 아래 */
+      width: 100%;        /* 글자 폭만큼 */
+      height: 4px;        /* 선 두께 */
+      background: black;
+      transform: scaleX(0);     /* 처음엔 안보임 */
+      transform-origin: left;   /* 왼쪽에서부터 확장 */
+      transition: transform 0.3s ease; /* 애니메이션 */
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      transform: scaleX(1);     /* 호버 시 선이 나타남 */
+    }
+    #collapsibleNavbar .nav-item .dropdown-toggle::after{
+      border: none !important;
+    }
+    #collapsibleNavbar .nav-item:hover i{
+      animation: ani01 0.5s ease-in-out forwards !important;
+    }
+      /* animation-name: ani01; */
+      /* animation-duration: 0.5s; */
+      /* animation-timing-function: ease-in-out; */
+      
+      /* 애니메이션 종료후 마지막 상태 유지. 원래 상태로 돌아가지 않음. */
+      /* animation-fill-mode: forwards;   */
+
+    @keyframes ani01{
+      0%{transform: rotate(0deg);}
+      100%{transform: rotate(90deg);}
+    }
+    .slider-pc{
+      display: block !important;
+    }
+    .slider-m{
+      display: none !important;
+    }
+    .slider-container { 
+      max-width: 1500px;
+      height: 570px !important;
+      margin: 50px auto;
+    }
+    .slide{
+      position: relative;
+    }
+    .slide .caption, 
+    .slide .more{
+      position: absolute;
+      padding-left: 50px;
+    }
+    .p1{
+      font-weight: bold;
+      font-size: 21px !important;
+    }
+    .p2{
+      font-weight: lighter;
+      margin-top: -10px;
+      font-size: 15px;
+    }
+    .slide .more{
+      padding-top: 25px;
+    }
+    .more .btn{
+      width: 320px;
+    }
+    .slide .caption{
+      left: 5px; top: 190px;
+      color: white;
+      font-weight: bold;
+    }
+    .slide .more{
+      left: 5px; top: 300px;
+      color: white;
+    }
+    
+    .slider .slide {
+      margin: 0 10px; /* 슬라이드 간 간격 */
+    }
+    .slider .slide .btn{
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      padding-left: 50px;
+      padding-right: 50px;
+      border: none;
+      border-radius: 50px;
+    }
+    
+    .slider .slide img {
+      width: 100%;
+      height: 570px;
+      border-radius: 10px;
+      filter: brightness(70%);      
+    }
+
+    .slider .slide .thumbnail img{
+      filter: brightness(100%);
+    }
+
+    /* -------------------------------------------------- 이달의 픽--------------------------------------------- */
+    #month-pick{
+      padding: 50px 0 !important;
+      height: 500px !important;
+      margin-bottom: 50px !important;
+    }
+    #month-pick .thumbnail img{
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      height: 280px !important;
+    }
+    .thumbnail{
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      height: 470px !important;
+    }
+    .thumbnail p{
+      padding-top: 40px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .thumbnail i{
+      position: relative;
+      left: -45px;
+      top: 2px;
+    }
+    .container h1{
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    #story .col-md-6,
+    #tommorow .col-md-6{
+      border-radius: 10px !important;
+      background-color: white;
+      height: 500px !important;
+      padding: 0;     /* 안쪽 여백 없애기. 이미지가 부모박스에 가득차 보이게 */
+    }
+    #story .col-md-6 .btn1,
+    #tommorow .col-md-6 .btn1{
+      padding-top: 200px;
+      text-align: center;
+    }
+    #story .col-md-6 .caption,
+    #tommorow .col-md-6 .caption{
+      margin-top: 60px;
+      margin-left: 60px;
+    }
+    #story .col-md-6 img,
+    #tommorow .col-md-6 img{
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    #story .row,
+    #tommorow .row{
+      display: flex !important;
+      align-items: center;
+      height:590px!important;
+   
+    }
+    #story .col-md-6:nth-child(1){
+      align-self: flex-start !important;
+      width: 600px;
+    }
+    #story .col-md-6:nth-child(2){
+      align-self: flex-end !important;
+      width: 800px !important;
+    }
+    #tommorow .col-md-6:nth-child(1){
+      align-self: flex-end !important;
+      width: 800px !important;
+    }
+    #tommorow .col-md-6:nth-child(2){
+      align-self: flex-start !important;
+      width: 600px !important;
+    }
+    #story .col-md-6:nth-child(1),
+    #tommorow .col-md-6:nth-child(1){
+      margin-right: -100px !important;
+    }
+    #story .col-md-6:nth-child(1){
+      z-index: 999;
+    }
+
+    #story .col-md-6:nth-child(2),
+    #tommorow .col-md-6:nth-child(1){
+      width: 670px;
+    }
+
+ 
+    /* brand */
+    #brand{display: block;}
+    #brand-m{display: none;}
+    #brand .row{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #brand a{
+      display: block;
+      margin: 0 auto;
+      width: 330px;
+      border-radius: 25px;
+      margin-top: 20px;
+      font-weight: bold;
+      border: 3px solid black;
+    }
+    
+    #brand .col-md-4{
+      background-color: white;
+      box-sizing: border-box;
+      transition: 0.2s;
+      width: 230px;
+      height: 230px;
+      border-radius: 20px;
+      margin: 15px;
+      line-height: 230px;
+    }
+
+    #brand .col-md-4 img{
+      width: 100%;
+      position: relative;
+    }
+    #brand .col-md-4:hover{
+      transform: scale(1.05);
+    }
+
+    footer.container-fulid{
+      background-color: black;
+    }
+
+    #collapsibleNavbar .dropdown-toggle:hover+.dropdown-menu{
+      display: block;
+    }
+
+    #footer-pc{display: block;}
+    #footer-m{display: none;}
+
+
+    /* 네비게이션 바 서브메뉴 모바일용!!!!!!!!!!!!!!!!!!!!!!!! */
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion:after {
+      /* content: '\002B'; */
+      content: '\f054';
+      font-family: "Font Awesome 7 Free";
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      /* content: "\2212"; */
+      content: '\f078';
+      font-family: "Font Awesome 7 Free";
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }      
+    #footer-pc h6{
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #footer-pc li{
+      font-weight: lighter;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!모바일용!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    @media screen and (max-width:767px) {
+    
+      /* #collapsibleNavbar{
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: white !important;
+        z-index: 9999999 !important;
+        color: black !important;
+        top: 0;
+        left: 0;
+      } */
+       /* 모바일용 내비바 */ 
+      .navbar .container{
+      position: relative;
+      left: 0;
+      }
+      nav .container{ padding:0 10px !important}
+      #collapsibleNavbar{opacity: 0;}
+      #collapsibleNavbar-m{opacity: 1;}
+      #collapsibleNavbar-m{
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: white !important;
+        z-index: 9999999 !important;
+        color: black !important;
+        top: 0;
+        left: 0;
+      }
+      #collapsibleNavbar-m .accordion{
+        background-color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .ul1 li{
+        padding: 5px;
+      }
+      .ul1 li a{
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+      }
+      #collapsibleNavbar-m .btn{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: -44%;
+        font-size: 30px;
+      }
+      #collapsibleNavbar-m .accordion.no-arrow::after {
+        content: none;
+      }
+
+      /* /모바일용 내비바 */
+   
+
+      .slide{text-align: center;}
+      .slider .slide img {
+        width: 100%;
+        height: 700px;
+        border-radius: 10px;
+      }
+      
+      .slider-pc{display: none !important;}  
+      .slider-m{display: block !important;}   
+      
+      .slide .caption,
+      .slide .more{      
+        width: 100%;
+      
+      }
+      .slide .caption{     
+        top: 520px !important;
+        padding-right: 40px;
+      }
+      .slide .more{     
+        top: 620px !important;     
+      }
+      .more .btn{
+        margin-left: -50px;
+      }
+
+      
+      #story .row{
+        margin-bottom: 180px;
+      }
+      #story .col-md-6:nth-child(1){
+        width: 440px !important;
+        height: 180px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: -50px !important;
+        float: left !important;
+      }
+      #story .col-md-6 .caption{
+        position: relative;
+        top: -40px;
+        left: -30px;
+      }
+      #story .col-md-6 .caption h3{
+        font-size: 28px;
+        font-family: "Jua";
+        font-weight: bold;
+      }
+      #story .col-md-6 .btn1,
+      #tommorow .col-md-6 .btn1{
+        position: relative;
+        bottom: 240px;
+      }
+      #story .col-md-6:nth-child(2){
+        float: left !important;
+      }
+      #story .col-md-6 img,
+      #tommorow .col-md-6 img{
+        border-radius: 0;
+      }
+      #tommorow .col-md-6:nth-child(2){
+        position: relative;
+        top: -620px;
+        width: 440px !important;
+        height: 200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      
+      }
+      #tommorow .col-md-6 .caption h3{
+        font-size: 28px;
+        font-family: "Jua";
+        font-weight: bold;
+      }
+      #tommorow .col-md-6 .caption p,
+      #story .col-md-6 .caption p{
+        font-size: 15px;
+        font-weight: 545;
+      }
+      #tommorow .col-md-6 .caption{
+        position: relative;
+        top: -40px;
+        left: -30px;
+      }
+      /* ------------------------------브랜드---------------------------- */
+      #brand{display: none;}
+      #brand-m{
+        display: block;
+        position: relative;
+        top: -50px;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+      }
+      #brand-m h1{
+        padding-bottom: 40px;
+      }
+      #brand-m a{
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+        border-radius: 25px;
+        margin-top: 40px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #brand-m .row{
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      
+      #brand-m .col-md-6{
+        background-color: white;
+        box-sizing: border-box;
+        transition: 0.2s;
+        width: 210px;
+        height: 210px;
+        border-radius: 20px !important;
+        margin: 10px;
+        line-height: 230px;
+      }
+      
+      #brand-m .col-md-6 img{
+        width: 100%;
+        
+      }
+      #brand-m .col-md-6:hover{
+        transform: scale(1.05);
+      }
+      .thumbnail{
+        background-color: white;
+        border-radius: 15px;
+   
+    }
+      #footer-m .accordion:after {
+        /* content: '\002B'; */
+        content: '\f107';
+        font-family: "Font Awesome 7 Free";
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+  
+      #footer-m .active:after {
+        /* content: "\2212"; */
+        content: '\f106';
+        font-family: "Font Awesome 7 Free";
+      }
+      #footer-pc{display: none;}
+      #footer-m{
+        display: block;
+        background-color: black;
+        color: white;
+        height: 100%;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 40px
+      }
+      #footer-m img{
+        padding-left: 30px;
+      }
+      #footer-m .accordion{
+        font-size: 24px;
+        font-weight: bold;
+      }
+      #footer-m button,
+      #footer-m div{
+        background-color: black;
+        color: white;
+      }
+      #footer-m ul li{
+        font-size: 24px;
+      }
+      #footer-m .btn{
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+        border-radius: 25px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        border: 3px solid rgb(255, 255, 255);
+      }
+      #footer-m li a{
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+      }
+      #month-pick{
+        margin-top: 180px;
+      }
+      .iii{
+        color: white;
+        font-size: 25px;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-left: 15px;
+      }
+    }

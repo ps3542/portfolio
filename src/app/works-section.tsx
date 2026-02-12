@@ -7,7 +7,41 @@ type WorkItem = {
   subtitle: string;
   year: string;
   href?: string;
+  video?: string;
 };
+
+function toYoutubeEmbedUrl(url?: string) {
+  if (!url) return null;
+
+  try {
+    const u = new URL(url);
+
+    // youtu.be/<id>
+    if (u.hostname === 'youtu.be') {
+      const id = u.pathname.replace('/', '');
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+
+    // youtube.com
+    if (u.hostname.includes('youtube.com')) {
+      // /watch?v=<id>
+      const v = u.searchParams.get('v');
+      if (v) return `https://www.youtube.com/embed/${v}`;
+
+      // /shorts/<id>
+      const shorts = u.pathname.match(/^\/shorts\/([^/]+)/);
+      if (shorts?.[1]) return `https://www.youtube.com/embed/${shorts[1]}`;
+
+      // already /embed/<id>
+      const embed = u.pathname.match(/^\/embed\/([^/]+)/);
+      if (embed?.[1]) return `https://www.youtube.com/embed/${embed[1]}`;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
 
 export default function WorksSection({ works }: { works: WorkItem[] }) {
   const items_ref = useRef<Array<HTMLDivElement | null>>([]);
@@ -19,10 +53,8 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
     const els = items_ref.current.filter(Boolean) as HTMLDivElement[];
     if (!els.length) return;
 
-    // 관찰 기준: 뷰포트 상단 근처를 "활성"으로 잡아서 왼쪽 숫자가 자연스럽게 따라오게 합니다.
     const io = new IntersectionObserver(
       (entries) => {
-        // 현재 교차 중인 요소 중, 가장 위쪽에 가까운 것을 active로
         const visible = entries
           .filter((e) => e.isIntersecting)
           .map((e) => ({
@@ -35,7 +67,6 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
       },
       {
         root: null,
-        // 상단 25% 지점에 들어오면 활성화. (레퍼런스 느낌)
         rootMargin: '-25% 0px -65% 0px',
         threshold: 0.01,
       },
@@ -45,7 +76,10 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
     return () => io.disconnect();
   }, [count]);
 
-  const active_digit = useMemo(() => String(active + 1).padStart(1, '0'), [active]);
+  const active_digit = useMemo(
+    () => String(active + 1).padStart(1, '0'),
+    [active]
+  );
 
   return (
     <section id="works" className="works-ref" aria-label="selected works">
@@ -53,8 +87,7 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
         <div className="ref-heading">
           <div>
             <h2>selected projects /</h2>
-            
-          </div>        
+          </div>
         </div>
 
         <div className="works-grid">
@@ -66,35 +99,59 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
           </div>
 
           <div className="works-list">
-            {works.map((w, idx) => (
-              <div
-                key={w.title + idx}
-                className="work-card"
-                ref={(el) => {
-                  items_ref.current[idx] = el;
-                }}
-                data-index={idx}
-              >
-                <a
-                  className="work-card-inner"
-                  href={w.href ?? '#'}
-                  target={w.href && w.href !== '#' ? '_blank' : undefined}
-                  rel={w.href && w.href !== '#' ? 'noopener noreferrer' : undefined}
+            {works.map((w, idx) => {
+              const embed = toYoutubeEmbedUrl(w.video);
+
+              return (
+                <div
+                  key={w.title + idx}
+                  className="work-card"
+                  ref={(el) => {
+                    items_ref.current[idx] = el;
+                  }}
+                  data-index={idx}
                 >
-                  <div className="work-thumb" aria-hidden="true" />
-                  <div className="work-meta-row">
-                    <div>
-                      <div className="work-subtitle">{w.subtitle}</div>
-                      <div className="work-title">{w.title}</div>
+                  <a
+                    className="work-card-inner"
+                    href={w.href ?? '#'}
+                    target={w.href && w.href !== '#' ? '_blank' : undefined}
+                    rel={
+                      w.href && w.href !== '#'
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
+                  >
+                    <div className="work-thumb">
+                      {embed && (
+                        <iframe
+                          src={embed}
+                          title={`${w.title} demo`}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'block',
+                          }}
+                        />
+                      )}
                     </div>
-                    <div className="work-tags">
-                      <span className="tag">{w.subtitle}</span>
-                      <span className="tag tag-solid">{w.year}</span>
+
+                    <div className="work-meta-row">
+                      <div>
+                        <div className="work-subtitle">{w.subtitle}</div>
+                        <div className="work-title">{w.title}</div>
+                      </div>
+                      <div className="work-tags">
+                        <span className="tag">{w.subtitle}</span>
+                        <span className="tag tag-solid">{w.year}</span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            ))}
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
