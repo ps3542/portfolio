@@ -10,31 +10,32 @@ type WorkItem = {
   video?: string;
 };
 
+
+
 function toYoutubeEmbedUrl(url?: string) {
   if (!url) return null;
+
+  const base =
+  'rel=0&modestbranding=1&playsinline=1&mute=1&controls=0';
+
 
   try {
     const u = new URL(url);
 
-    // youtu.be/<id>
     if (u.hostname === 'youtu.be') {
       const id = u.pathname.replace('/', '');
-      return id ? `https://www.youtube.com/embed/${id}` : null;
+      return id ? `https://www.youtube.com/embed/${id}?${base}` : null;
     }
 
-    // youtube.com
     if (u.hostname.includes('youtube.com')) {
-      // /watch?v=<id>
       const v = u.searchParams.get('v');
-      if (v) return `https://www.youtube.com/embed/${v}`;
+      if (v) return `https://www.youtube.com/embed/${v}?${base}`;
 
-      // /shorts/<id>
       const shorts = u.pathname.match(/^\/shorts\/([^/]+)/);
-      if (shorts?.[1]) return `https://www.youtube.com/embed/${shorts[1]}`;
+      if (shorts?.[1]) return `https://www.youtube.com/embed/${shorts[1]}?${base}`;
 
-      // already /embed/<id>
       const embed = u.pathname.match(/^\/embed\/([^/]+)/);
-      if (embed?.[1]) return `https://www.youtube.com/embed/${embed[1]}`;
+      if (embed?.[1]) return `https://www.youtube.com/embed/${embed[1]}?${base}`;
     }
 
     return null;
@@ -124,16 +125,11 @@ export default function WorksSection({ works }: { works: WorkItem[] }) {
                     <div className="work-thumb">
                       {embed && (
                         <iframe
-                          src={embed}
+                          src={active === idx ? `${embed}&autoplay=1` : embed}
                           title={`${w.title} demo`}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'block',
-                          }}
+                          allowFullScreen                        
                         />
                       )}
                     </div>

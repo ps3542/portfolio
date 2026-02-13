@@ -1,0 +1,85 @@
+/* =========================================================
+   CONTACT / FOOTER (single block)
+========================================================= */
+
+.contact-wrap {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 18px;
+}
+
+.contact-title {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: clamp(26px, 3vw, 44px);
+}
+
+/* form */
+.form-min input,
+.form-min textarea {
+  border-radius: 14px !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  max-width: 70% !important;
+}
+
+.form-min .form-actions {
+  max-width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* footer */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-grid h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.footer-grid a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+}
+.footer-grid a:hover {
+  opacity: 1;
+}
+
+.localtime {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* scroll-to-top */
+.to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(243, 241, 236, 0.92);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
+.to-top:hover {
+  opacity: 1;
+}

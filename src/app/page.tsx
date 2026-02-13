@@ -195,14 +195,9 @@ export default function Page() {
           <div data-reveal className="about-wrap">
             <div className="row g-4 align-items-start">
               <div className="col-lg-6">
-                <div className="about-photo">
-                  <iframe
-                    src="https://www.youtube.com/embed/LZYojOWzfFM"
-                    title="About video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen                   
-                  />
+                <div className="about-photo"
+                  style={{ backgroundImage: "url('jump.png')" }}
+                >                  
                 </div>
               </div>             
             <div className="col-lg-6 about-text">

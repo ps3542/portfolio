@@ -1,0 +1,222 @@
+/* =========================================================
+   반응형 모음 (한 파일)
+   - 992px 이하: 태블릿/작은 노트북 대응
+   - 576px 이하: 모바일 대응
+   - services-ref 모바일(<=576): PC 레이아웃 무력화 + 모바일 스택 유지
+========================================================= */
+
+/* =========================
+   992px 이하 (태블릿/작은 화면)
+========================= */
+@media (max-width: 992px) {
+  :root {
+    --edge: 16px;
+    --section-y: 72px;
+  }
+
+  /* hero-top 안의 Notion / GitHub만 숨김 */
+  .hero-top .hero-nav a[href*="github"],
+  .hero-top .hero-nav a[href*="notion"] {
+    display: none !important;
+  }
+
+  .hero-top .hero-nav-divider {
+    display: none;
+  }
+
+  /* hero top: 한 줄 유지(넘치면 숨김) */
+  .hero-nav {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .hero-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* (있으면) service-row는 기존 유지 */
+  .service-row {
+    grid-template-columns: 72px 1fr;
+  }
+
+  /* works: meta 영역을 세로로 쌓기 */
+  .work-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-tags {
+    justify-content: flex-start;
+  }
+
+  /* footer는 1컬럼으로 바꾸지 않음(menu/social 한 행 유지) */
+}
+
+/* =========================
+   576px 이하 (모바일 최종)
+   - 화면 잘림/안보임 방지
+   - hero top 한 줄
+   - footer 2컬럼 유지
+========================= */
+@media (max-width: 576px) {
+  /* 가로 잘림/안보임 방지 */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* hero title: 모바일에서 줄바꿈 허용 */
+  .hero-title {
+    white-space: normal;
+  }
+
+  /* hero photo가 가로를 밀어내는 문제 제거 */
+  .hero-photo {
+    margin-right: 0;
+    max-width: 320px;
+  }
+
+  /* contact 폼: 모바일에서 70% 제한 해제 */
+  .form-min input,
+  .form-min textarea,
+  .form-min .form-actions {
+    max-width: 100% !important;
+  }
+
+  /* footer: 끝까지 2컬럼 유지 */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+/* =========================
+   services-ref 모바일 (<=576) - 단일 블록(충돌 금지)
+   목적:
+   - PC 레이아웃 규칙 완전 무력화(오른쪽 밀림 제거)
+   - 모바일에서는 m-row(번호+타이틀) 누적 스택 유지
+========================= */
+@media (max-width: 576px) {
+  /* intro: 1열 */
+  .services-ref .services-intro-main {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 14px !important;
+  }
+
+  .services-ref .services-intro-tag {
+    grid-column: 1 !important;
+    padding-top: 0 !important;
+  }
+
+  .services-ref .services-intro-desc {
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* PC용 services-right(3컬럼/그리드) 무조건 제거 */
+  .services-ref .services-right {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* stage 유지 */
+  .services-ref .services-stage {
+    height: 100svh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* 모바일은 1열만 사용 */
+  .services-ref .services-grid {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    align-items: start !important;
+  }
+
+  /* PC용 left 숫자 스택 숨김 */
+  .services-ref .services-left,
+  .services-ref .idx-stack {
+    display: none !important;
+  }
+
+  /* PC용 title-row/idx-item는 모바일에서 안 씀 */
+  .services-ref .idx-item,
+  .services-ref .title-row {
+    display: none !important;
+  }
+
+  /* 모바일 누적 스택: m-row만 사용 */
+  .services-ref .titles-stack {
+    margin-top: 26px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .services-ref .m-row {
+    display: none !important;
+  }
+
+  /* is-on 누적이면 계속 보이게 */
+  .services-ref .m-row.is-on {
+    display: grid !important;
+    grid-template-columns: 80px 1fr;
+    column-gap: 18px;
+    align-items: start;
+    padding: 14px 0 10px;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .services-ref .m-idx {
+    font-weight: 900;
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .services-ref .title-text {
+    font-size: clamp(28px, 8.2vw, 44px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    word-break: keep-all;
+  }
+
+  .services-ref .title-rule {
+    margin-top: 10px !important;
+  }
+
+  /* 본문 */
+  .services-ref .service-body {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  .services-ref .service-sub {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .services-ref .service-desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .services-ref .service-lines .line-row {
+    grid-template-columns: 46px 1fr !important;
+    padding: 10px 0 !important;
+  }
+}
